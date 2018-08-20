@@ -19,7 +19,7 @@ public class SingleIntComponentImpl extends SingleNumberComponentImpl<Integer>
     private static final AtomicLong INSTANCE_COUNTER = new AtomicLong(Constants.ZERO_LONG);
 
     /**
-     * constructor using {@link SingleIntComponentModel}
+     * constructor using {@link SingleIntComponentModel} data model.
      * @param model - data model with component data.
      */
     public SingleIntComponentImpl(@NotNull SingleIntComponentModel model) {

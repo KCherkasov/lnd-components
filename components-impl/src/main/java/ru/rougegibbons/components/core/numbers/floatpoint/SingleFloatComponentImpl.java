@@ -10,7 +10,7 @@ import ru.rougegibbons.landsanddungeons.utils.constants.Constants;
 import java.util.concurrent.atomic.AtomicLong;
 
 /**
- * {@link Float} implementation of {@link SingleNumberComponentImpl}
+ * {@link Float} implementation of {@link SingleNumberComponentImpl} class.
  * @see SingleNumberComponent
  * @see SingleNumberComponentImpl
  */

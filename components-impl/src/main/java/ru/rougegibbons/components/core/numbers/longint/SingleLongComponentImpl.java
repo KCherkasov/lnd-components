@@ -36,7 +36,7 @@ public class SingleLongComponentImpl extends SingleNumberComponentImpl<Long>
     }
 
     /**
-     * packs stored data into {@link SingleLongComponentModel} data model
+     * packs stored data into {@link SingleLongComponentModel} data model.
      * @return data model.
      */
     @Override
