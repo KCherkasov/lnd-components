@@ -5,7 +5,7 @@ import org.jetbrains.annotations.NotNull;
 import ru.rougegibbons.components.models.ComponentModel;
 
 /**
- * data model for {@link ru.rougegibbons.components.core.numbers.integer.SingleIntComponentImpl}
+ * data model for {@link ru.rougegibbons.components.core.numbers.integer.SingleIntComponentImpl} class.
  * @see ru.rougegibbons.components.core.numbers.integer.SingleIntComponentImpl
  */
 public class SingleIntComponentModel extends ComponentModel {

@@ -5,7 +5,7 @@ import org.jetbrains.annotations.NotNull;
 import ru.rougegibbons.components.models.ComponentModel;
 
 /**
- * data model for {@link ru.rougegibbons.components.core.numbers.longint.SingleLongComponentImpl}
+ * data model for {@link ru.rougegibbons.components.core.numbers.longint.SingleLongComponentImpl} class.
  */
 public class SingleLongComponentModel extends ComponentModel {
     private final Long value;

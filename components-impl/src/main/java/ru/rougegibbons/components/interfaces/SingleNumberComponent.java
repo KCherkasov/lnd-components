@@ -14,7 +14,13 @@ public interface SingleNumberComponent<T extends Number> extends Component {
      */
     @NotNull T getValue();
 
-    interface SingleIntComponent extends SingleNumberComponent<Integer> {}
-    interface SingleLongComponent extends SingleNumberComponent<Long> {}
-    interface SingleFloatComponent extends SingleNumberComponent<Float> {}
+    interface SingleIntComponent extends SingleNumberComponent<Integer> {
+
+    }
+
+    interface SingleLongComponent extends SingleNumberComponent<Long> {
+    }
+
+    interface SingleFloatComponent extends SingleNumberComponent<Float> {
+    }
 }
