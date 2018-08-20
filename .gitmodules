@@ -1,0 +1,3 @@
+[submodule "lnd-utils"]
+	path = lnd-utils
+	url = https://github.com/RougeGibbons/lnd-utils.git
