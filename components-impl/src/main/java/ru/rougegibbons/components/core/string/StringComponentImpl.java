@@ -2,7 +2,7 @@ package ru.rougegibbons.components.core.string;
 
 import org.jetbrains.annotations.NotNull;
 import ru.rougegibbons.components.core.AbstractComponent;
-import ru.rougegibbons.components.interfaces.StringComponent;
+import ru.rougegibbons.components.interfaces.core.StringComponent;
 import ru.rougegibbons.components.models.ComponentModel;
 import ru.rougegibbons.components.models.core.StringComponentModel;
 import ru.rougegibbons.landsanddungeons.utils.constants.Constants;

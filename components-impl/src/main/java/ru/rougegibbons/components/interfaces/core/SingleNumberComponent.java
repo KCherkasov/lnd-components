@@ -1,6 +1,7 @@
-package ru.rougegibbons.components.interfaces;
+package ru.rougegibbons.components.interfaces.core;
 
 import org.jetbrains.annotations.NotNull;
+import ru.rougegibbons.components.interfaces.Component;
 
 /**
  * Generic interface for components containing single number.

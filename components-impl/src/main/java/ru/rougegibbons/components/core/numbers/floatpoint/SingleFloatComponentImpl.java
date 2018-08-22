@@ -2,7 +2,7 @@ package ru.rougegibbons.components.core.numbers.floatpoint;
 
 import org.jetbrains.annotations.NotNull;
 import ru.rougegibbons.components.core.numbers.generic.SingleNumberComponentImpl;
-import ru.rougegibbons.components.interfaces.SingleNumberComponent;
+import ru.rougegibbons.components.interfaces.core.SingleNumberComponent;
 import ru.rougegibbons.components.models.ComponentModel;
 import ru.rougegibbons.components.models.core.SingleFloatComponentModel;
 import ru.rougegibbons.landsanddungeons.utils.constants.Constants;

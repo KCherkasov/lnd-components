@@ -2,7 +2,7 @@ package ru.rougegibbons.components.core.numbers.generic;
 
 import org.jetbrains.annotations.NotNull;
 import ru.rougegibbons.components.core.AbstractComponent;
-import ru.rougegibbons.components.interfaces.SingleNumberComponent;
+import ru.rougegibbons.components.interfaces.core.SingleNumberComponent;
 
 /**
  * generic implementation for {@link SingleNumberComponent}.
