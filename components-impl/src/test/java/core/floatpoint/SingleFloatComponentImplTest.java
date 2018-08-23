@@ -2,9 +2,9 @@ package core.floatpoint;
 
 import org.jetbrains.annotations.NotNull;
 import org.junit.jupiter.api.Test;
-import ru.rougegibbons.components.core.numbers.floatpoint.SingleFloatComponentImpl;
-import ru.rougegibbons.components.models.ComponentModel;
-import ru.rougegibbons.components.models.core.SingleFloatComponentModel;
+import ru.rougegibbons.landsanddungeons.components.core.numbers.floatpoint.SingleFloatComponentImpl;
+import ru.rougegibbons.landsanddungeons.components.models.ComponentModel;
+import ru.rougegibbons.landsanddungeons.components.models.core.SingleFloatComponentModel;
 import ru.rougegibbons.landsanddungeons.utils.constants.Constants;
 import ru.rougegibbons.landsanddungeons.utils.functions.FloatComparator;
 
@@ -16,11 +16,7 @@ public final class SingleFloatComponentImplTest {
     @Test
     public void idGeneratorTest() {
         final SingleFloatComponentImpl componentOne = prepareZeroComponent();
-        assertEquals(Constants.ZERO_LONG, componentOne.getId().longValue(),
-                "first component's id shall be zero.");
         final SingleFloatComponentImpl componentTwo = prepareZeroComponent();
-        assertEquals(1, componentTwo.getId().longValue(),
-                "second component's id shall be one.");
         assertEquals(1, componentTwo.getId() - componentOne.getId(),
                 "difference between adjacent components ids shall always be one.");
     }
