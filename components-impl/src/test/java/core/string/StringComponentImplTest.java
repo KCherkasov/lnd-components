@@ -2,9 +2,9 @@ package core.string;
 
 import org.jetbrains.annotations.NotNull;
 import org.junit.jupiter.api.Test;
-import ru.rougegibbons.components.core.string.StringComponentImpl;
-import ru.rougegibbons.components.models.ComponentModel;
-import ru.rougegibbons.components.models.core.StringComponentModel;
+import ru.rougegibbons.landsanddungeons.components.core.string.StringComponentImpl;
+import ru.rougegibbons.landsanddungeons.components.models.ComponentModel;
+import ru.rougegibbons.landsanddungeons.components.models.core.StringComponentModel;
 import ru.rougegibbons.landsanddungeons.utils.constants.Constants;
 
 import static org.hamcrest.CoreMatchers.instanceOf;
@@ -16,10 +16,7 @@ public final class StringComponentImplTest {
     @Test
     public void idGeneratorTest() {
         final StringComponentImpl componentOne = prepareEmptyComponent();
-        assertEquals(Constants.ZERO_LONG, componentOne.getId().longValue(),
-                "first component's id shall be zero");
         final StringComponentImpl componentTwo = prepareEmptyComponent();
-        assertEquals(1, componentTwo.getId().longValue(), "second component's id shall be one");
         assertEquals(1, componentTwo.getId() - componentOne.getId(),
                 "difference between adjacent components ids shall be always one");
     }

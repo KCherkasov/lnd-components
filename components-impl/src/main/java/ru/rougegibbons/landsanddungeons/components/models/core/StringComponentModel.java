@@ -1,12 +1,13 @@
-package ru.rougegibbons.components.models.core;
+package ru.rougegibbons.landsanddungeons.components.models.core;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import org.jetbrains.annotations.NotNull;
-import ru.rougegibbons.components.models.ComponentModel;
+import ru.rougegibbons.landsanddungeons.components.core.string.StringComponentImpl;
+import ru.rougegibbons.landsanddungeons.components.models.ComponentModel;
 
 /**
- * data model class for {@link ru.rougegibbons.components.core.string.StringComponentImpl} class.
- * @see ru.rougegibbons.components.core.string.StringComponentImpl
+ * data model class for {@link StringComponentImpl} class.
+ * @see StringComponentImpl
  */
 public class StringComponentModel extends ComponentModel {
     private final String text;

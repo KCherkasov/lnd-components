@@ -1,10 +1,11 @@
-package ru.rougegibbons.components.core.numbers.floatpoint;
+package ru.rougegibbons.landsanddungeons.components.core.numbers.floatpoint;
 
 import org.jetbrains.annotations.NotNull;
-import ru.rougegibbons.components.core.numbers.generic.SingleNumberComponentImpl;
-import ru.rougegibbons.components.interfaces.SingleNumberComponent;
-import ru.rougegibbons.components.models.ComponentModel;
-import ru.rougegibbons.components.models.core.SingleFloatComponentModel;
+import ru.rougegibbons.landsanddungeons.components.core.AbstractComponent;
+import ru.rougegibbons.landsanddungeons.components.core.numbers.generic.SingleNumberComponentImpl;
+import ru.rougegibbons.landsanddungeons.components.interfaces.core.SingleNumberComponent;
+import ru.rougegibbons.landsanddungeons.components.models.ComponentModel;
+import ru.rougegibbons.landsanddungeons.components.models.core.SingleFloatComponentModel;
 import ru.rougegibbons.landsanddungeons.utils.constants.Constants;
 
 import java.util.concurrent.atomic.AtomicLong;
@@ -44,7 +45,7 @@ public class SingleFloatComponentImpl extends SingleNumberComponentImpl<Float>
     }
 
     /**
-     * instance id generator to be used in {@link ru.rougegibbons.components.core.AbstractComponent} constructor.
+     * instance id generator to be used in {@link AbstractComponent} constructor.
      * @return generated id
      */
     @Override

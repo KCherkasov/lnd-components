@@ -1,7 +1,7 @@
-package ru.rougegibbons.components.core;
+package ru.rougegibbons.landsanddungeons.components.core;
 
 import org.jetbrains.annotations.NotNull;
-import ru.rougegibbons.components.interfaces.Component;
+import ru.rougegibbons.landsanddungeons.components.interfaces.Component;
 
 /**
  * Minimal implementation of the {@link Component} interface,

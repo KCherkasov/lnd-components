@@ -1,11 +1,12 @@
-package ru.rougegibbons.components.models.core;
+package ru.rougegibbons.landsanddungeons.components.models.core;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import org.jetbrains.annotations.NotNull;
-import ru.rougegibbons.components.models.ComponentModel;
+import ru.rougegibbons.landsanddungeons.components.core.numbers.longint.SingleLongComponentImpl;
+import ru.rougegibbons.landsanddungeons.components.models.ComponentModel;
 
 /**
- * data model for {@link ru.rougegibbons.components.core.numbers.longint.SingleLongComponentImpl} class.
+ * data model for {@link SingleLongComponentImpl} class.
  */
 public class SingleLongComponentModel extends ComponentModel {
     private final Long value;

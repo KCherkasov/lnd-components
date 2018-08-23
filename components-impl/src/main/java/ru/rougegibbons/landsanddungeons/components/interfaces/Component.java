@@ -1,7 +1,7 @@
-package ru.rougegibbons.components.interfaces;
+package ru.rougegibbons.landsanddungeons.components.interfaces;
 
 import org.jetbrains.annotations.NotNull;
-import ru.rougegibbons.components.models.ComponentModel;
+import ru.rougegibbons.landsanddungeons.components.models.ComponentModel;
 
 /**
  * Main interface for game mechanics components in ECS model.

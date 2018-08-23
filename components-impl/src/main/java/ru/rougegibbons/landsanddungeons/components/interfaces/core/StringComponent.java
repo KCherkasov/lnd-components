@@ -1,6 +1,7 @@
-package ru.rougegibbons.components.interfaces;
+package ru.rougegibbons.landsanddungeons.components.interfaces.core;
 
 import org.jetbrains.annotations.NotNull;
+import ru.rougegibbons.landsanddungeons.components.interfaces.Component;
 
 /**
  * {@link Component} interface extension for text containers.

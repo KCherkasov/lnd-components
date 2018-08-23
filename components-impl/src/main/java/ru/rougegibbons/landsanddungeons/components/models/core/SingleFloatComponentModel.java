@@ -1,12 +1,13 @@
-package ru.rougegibbons.components.models.core;
+package ru.rougegibbons.landsanddungeons.components.models.core;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import org.jetbrains.annotations.NotNull;
-import ru.rougegibbons.components.models.ComponentModel;
+import ru.rougegibbons.landsanddungeons.components.core.numbers.floatpoint.SingleFloatComponentImpl;
+import ru.rougegibbons.landsanddungeons.components.models.ComponentModel;
 
 /**
- * data model for {@link ru.rougegibbons.components.core.numbers.floatpoint.SingleFloatComponentImpl} class.
- * @see ru.rougegibbons.components.core.numbers.floatpoint.SingleFloatComponentImpl
+ * data model for {@link SingleFloatComponentImpl} class.
+ * @see SingleFloatComponentImpl
  */
 public class SingleFloatComponentModel extends ComponentModel {
     private final Float value;
