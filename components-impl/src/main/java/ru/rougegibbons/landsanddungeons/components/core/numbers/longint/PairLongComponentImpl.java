@@ -5,7 +5,7 @@ import ru.rougegibbons.landsanddungeons.components.core.AbstractComponent;
 import ru.rougegibbons.landsanddungeons.components.core.numbers.generic.PairNumberComponentImpl;
 import ru.rougegibbons.landsanddungeons.components.interfaces.core.numbers.PairNumberComponent;
 import ru.rougegibbons.landsanddungeons.components.models.ComponentModel;
-import ru.rougegibbons.landsanddungeons.components.models.core.PairLongComponentModel;
+import ru.rougegibbons.landsanddungeons.components.models.core.numbers.PairLongComponentModel;
 import ru.rougegibbons.landsanddungeons.utils.constants.Constants;
 
 import java.util.concurrent.atomic.AtomicLong;

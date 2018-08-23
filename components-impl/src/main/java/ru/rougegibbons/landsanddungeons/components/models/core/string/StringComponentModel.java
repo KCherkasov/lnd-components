@@ -1,4 +1,4 @@
-package ru.rougegibbons.landsanddungeons.components.models.core;
+package ru.rougegibbons.landsanddungeons.components.models.core.string;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import org.jetbrains.annotations.NotNull;

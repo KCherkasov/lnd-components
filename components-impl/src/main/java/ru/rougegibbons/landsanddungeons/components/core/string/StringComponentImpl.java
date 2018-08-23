@@ -4,7 +4,7 @@ import org.jetbrains.annotations.NotNull;
 import ru.rougegibbons.landsanddungeons.components.core.AbstractComponent;
 import ru.rougegibbons.landsanddungeons.components.interfaces.core.string.StringComponent;
 import ru.rougegibbons.landsanddungeons.components.models.ComponentModel;
-import ru.rougegibbons.landsanddungeons.components.models.core.StringComponentModel;
+import ru.rougegibbons.landsanddungeons.components.models.core.string.StringComponentModel;
 import ru.rougegibbons.landsanddungeons.utils.constants.Constants;
 
 import java.util.concurrent.atomic.AtomicLong;

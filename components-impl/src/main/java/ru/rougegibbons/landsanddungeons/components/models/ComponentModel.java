@@ -5,7 +5,10 @@ import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import org.jetbrains.annotations.NotNull;
 import ru.rougegibbons.landsanddungeons.components.core.numbers.floatpoint.PairFloatComponentImpl;
-import ru.rougegibbons.landsanddungeons.components.models.core.*;
+import ru.rougegibbons.landsanddungeons.components.models.core.numbers.*;
+import ru.rougegibbons.landsanddungeons.components.models.core.string.StringComponentModel;
+import ru.rougegibbons.landsanddungeons.components.models.core.string.parsers.MarkdownStringComponentModel;
+import ru.rougegibbons.landsanddungeons.components.models.core.string.parsers.SubstitutionsComponentModel;
 
 /**
  * base data model class for components.
@@ -13,6 +16,8 @@ import ru.rougegibbons.landsanddungeons.components.models.core.*;
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "class")
 @JsonSubTypes({
         @JsonSubTypes.Type(StringComponentModel.class),
+        @JsonSubTypes.Type(MarkdownStringComponentModel.class),
+        @JsonSubTypes.Type(SubstitutionsComponentModel.class),
 
         @JsonSubTypes.Type(SingleIntComponentModel.class),
         @JsonSubTypes.Type(SingleLongComponentModel.class),

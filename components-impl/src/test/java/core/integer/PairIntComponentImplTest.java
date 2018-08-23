@@ -4,7 +4,7 @@ import org.jetbrains.annotations.NotNull;
 import org.junit.jupiter.api.Test;
 import ru.rougegibbons.landsanddungeons.components.core.numbers.integer.PairIntComponentImpl;
 import ru.rougegibbons.landsanddungeons.components.models.ComponentModel;
-import ru.rougegibbons.landsanddungeons.components.models.core.PairIntComponentModel;
+import ru.rougegibbons.landsanddungeons.components.models.core.numbers.PairIntComponentModel;
 import ru.rougegibbons.landsanddungeons.utils.constants.Constants;
 
 import java.util.List;

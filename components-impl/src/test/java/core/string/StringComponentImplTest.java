@@ -4,7 +4,7 @@ import org.jetbrains.annotations.NotNull;
 import org.junit.jupiter.api.Test;
 import ru.rougegibbons.landsanddungeons.components.core.string.StringComponentImpl;
 import ru.rougegibbons.landsanddungeons.components.models.ComponentModel;
-import ru.rougegibbons.landsanddungeons.components.models.core.StringComponentModel;
+import ru.rougegibbons.landsanddungeons.components.models.core.string.StringComponentModel;
 import ru.rougegibbons.landsanddungeons.utils.constants.Constants;
 
 import static org.hamcrest.CoreMatchers.instanceOf;
