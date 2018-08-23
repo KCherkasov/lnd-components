@@ -1,4 +1,4 @@
-package ru.rougegibbons.landsanddungeons.components.interfaces.core;
+package ru.rougegibbons.landsanddungeons.components.interfaces.core.string;
 
 import org.jetbrains.annotations.NotNull;
 import ru.rougegibbons.landsanddungeons.components.interfaces.Component;
