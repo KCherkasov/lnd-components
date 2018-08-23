@@ -28,7 +28,15 @@ public interface PairNumberComponent<T extends Number> extends Component {
      */
     @NotNull List<T> getBoth();
 
-    interface PairIntComponent extends PairNumberComponent<Integer> {}
-    interface PairLongComponent extends PairNumberComponent<Long> {}
-    interface PairFloatComponent extends PairNumberComponent<Float> {}
+    interface PairIntComponent extends PairNumberComponent<Integer> {
+
+    }
+
+    interface PairLongComponent extends PairNumberComponent<Long> {
+
+    }
+
+    interface PairFloatComponent extends PairNumberComponent<Float> {
+
+    }
 }
