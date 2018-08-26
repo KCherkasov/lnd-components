@@ -53,7 +53,7 @@ public class MarkdownStringComponentImpl extends StringComponentImpl
      * @param model - {@link StringComponentModel} data model instance.
      */
     public MarkdownStringComponentImpl(@NotNull StringComponentModel model) {
-        this(model.getText());
+        super(model);
         extractTags();
     }
 
@@ -62,7 +62,8 @@ public class MarkdownStringComponentImpl extends StringComponentImpl
      * @param model - {@link MarkdownStringComponentModel} data model instance.
      */
     public MarkdownStringComponentImpl(@NotNull MarkdownStringComponentModel model) {
-        this(model.getText(), model.getTags());
+        super(model);
+        tags.addAll(model.getTags());
     }
 
     /**
@@ -88,7 +89,7 @@ public class MarkdownStringComponentImpl extends StringComponentImpl
      * @return generated instance id.
      */
     @Override
-    protected  @NotNull Long initId() {
+    protected @NotNull Long initId() {
         return INSTANCE_COUNTER.getAndIncrement();
     }
 
@@ -97,15 +98,17 @@ public class MarkdownStringComponentImpl extends StringComponentImpl
      */
     private void extractTags() {
         final String source = getText();
+        if (source.isEmpty()) {
+            return;
+        }
         Integer pos = Constants.ZERO_INT;
-        while (pos != IdsConstants.WRONG_INDEX) {
+        while (pos != IdsConstants.UNDEFINED_ID) {
             Integer tagPos = source.indexOf(MarkdownConfig.TAG_CHARACTER, pos);
-            if (tagPos > pos && (source.length() - tagPos) > 1) {
+            if ((tagPos >= pos) && (source.length() - tagPos) > 1) {
                 final StringBuilder tag = new StringBuilder();
-                while (!MarkdownConfig.SEPARATORS.contains(source.substring(tagPos, tagPos + 1))
-                        && tagPos < source.length()) {
-                    tag.append(source.charAt(tagPos));
-                    ++tagPos;
+                while (tagPos < source.length() && !MarkdownConfig.SEPARATORS
+                        .contains(source.substring(tagPos, tagPos + 1))) {
+                    tag.append(source.charAt(tagPos++));
                 }
                 tags.add(tag.toString());
             }

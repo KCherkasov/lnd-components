@@ -31,9 +31,9 @@ public class MarkdownTextParserComponentImpl extends AbstractComponent
         final StringBuilder processed = new StringBuilder();
         final String initial = source.getText();
         Integer currentPos = Constants.ZERO_INT;
-        while (currentPos > IdsConstants.WRONG_INDEX) {
-            final Integer tagPos = initial.indexOf(MarkdownConfig.TAG_CHARACTER, currentPos);
-            if (tagPos > IdsConstants.WRONG_INDEX) {
+        while (currentPos != IdsConstants.UNDEFINED_ID) {
+            Integer tagPos = initial.indexOf(MarkdownConfig.TAG_CHARACTER, currentPos);
+            if (tagPos > IdsConstants.UNDEFINED_ID) {
                 processed.append(initial, currentPos, tagPos);
                 final String tag = getTag(initial, tagPos);
                 if (substitutions.getTags().contains(tag)) {
@@ -41,6 +41,7 @@ public class MarkdownTextParserComponentImpl extends AbstractComponent
                 } else {
                     processed.append(tag);
                 }
+                tagPos += tag.length();
             } else {
                 processed.append(initial.substring(currentPos));
             }
@@ -62,8 +63,8 @@ public class MarkdownTextParserComponentImpl extends AbstractComponent
                                    @NotNull Integer fromPos) {
         int endTag = fromPos;
         final StringBuilder tagBuilder = new StringBuilder();
-        while (!MarkdownConfig.SEPARATORS.contains(source.substring(endTag, endTag + 1))
-                && endTag < source.length()) {
+        while (endTag < source.length() && !MarkdownConfig.SEPARATORS.contains(
+                source.substring(endTag, endTag + 1))) {
             tagBuilder.append(source.charAt(endTag++));
         }
         return tagBuilder.toString();

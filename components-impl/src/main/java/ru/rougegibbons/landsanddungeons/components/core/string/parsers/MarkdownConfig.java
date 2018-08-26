@@ -5,5 +5,5 @@ package ru.rougegibbons.landsanddungeons.components.core.string.parsers;
  */
 public final class MarkdownConfig {
     public static final char TAG_CHARACTER = '$';
-    public static final String SEPARATORS = " .,;:!?<>=-()@\"\'\\/&^%#~`{}[]№*|";
+    public static final String SEPARATORS = " .,;:!?<>=-()@\"\'\\/&^%#~`{}[]№*|\0\n\t";
 }
