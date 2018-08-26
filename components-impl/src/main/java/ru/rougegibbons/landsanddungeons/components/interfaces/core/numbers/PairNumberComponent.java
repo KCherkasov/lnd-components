@@ -1,15 +1,15 @@
-package ru.rougegibbons.landsanddungeons.components.interfaces.core;
+package ru.rougegibbons.landsanddungeons.components.interfaces.core.numbers;
 
 import org.jetbrains.annotations.NotNull;
-import ru.rougegibbons.landsanddungeons.components.interfaces.Component;
+import ru.rougegibbons.landsanddungeons.components.interfaces.PackableComponent;
 
 import java.util.List;
 
 /**
- * Component interface for pairs of numbers.
+ * PackableComponent interface for pairs of numbers.
  * @param <T> - any class derived from {@link Number} class.
  */
-public interface PairNumberComponent<T extends Number> extends Component {
+public interface PairNumberComponent<T extends Number> extends PackableComponent {
     /**
      * get first number in the pair.
      * @return first stored number.

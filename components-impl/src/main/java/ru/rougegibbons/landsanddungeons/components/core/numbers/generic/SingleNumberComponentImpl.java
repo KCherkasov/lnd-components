@@ -2,7 +2,7 @@ package ru.rougegibbons.landsanddungeons.components.core.numbers.generic;
 
 import org.jetbrains.annotations.NotNull;
 import ru.rougegibbons.landsanddungeons.components.core.AbstractComponent;
-import ru.rougegibbons.landsanddungeons.components.interfaces.core.SingleNumberComponent;
+import ru.rougegibbons.landsanddungeons.components.interfaces.core.numbers.SingleNumberComponent;
 
 /**
  * generic implementation for {@link SingleNumberComponent}.

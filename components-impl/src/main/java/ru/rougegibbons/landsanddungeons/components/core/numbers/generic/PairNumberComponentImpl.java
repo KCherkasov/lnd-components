@@ -2,7 +2,7 @@ package ru.rougegibbons.landsanddungeons.components.core.numbers.generic;
 
 import org.jetbrains.annotations.NotNull;
 import ru.rougegibbons.landsanddungeons.components.core.AbstractComponent;
-import ru.rougegibbons.landsanddungeons.components.interfaces.core.PairNumberComponent;
+import ru.rougegibbons.landsanddungeons.components.interfaces.core.numbers.PairNumberComponent;
 
 import java.util.ArrayList;
 import java.util.List;
