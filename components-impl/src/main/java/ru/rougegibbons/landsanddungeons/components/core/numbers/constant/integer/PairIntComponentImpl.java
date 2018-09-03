@@ -1,8 +1,8 @@
-package ru.rougegibbons.landsanddungeons.components.core.numbers.integer;
+package ru.rougegibbons.landsanddungeons.components.core.numbers.constant.integer;
 
 import org.jetbrains.annotations.NotNull;
 import ru.rougegibbons.landsanddungeons.components.core.AbstractComponent;
-import ru.rougegibbons.landsanddungeons.components.core.numbers.generic.PairNumberComponentImpl;
+import ru.rougegibbons.landsanddungeons.components.core.numbers.constant.generic.PairNumberComponentImpl;
 import ru.rougegibbons.landsanddungeons.components.interfaces.core.numbers.PairNumberComponent;
 import ru.rougegibbons.landsanddungeons.components.models.ComponentModel;
 import ru.rougegibbons.landsanddungeons.components.models.core.numbers.PairIntComponentModel;

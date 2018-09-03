@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import org.jetbrains.annotations.NotNull;
-import ru.rougegibbons.landsanddungeons.components.core.numbers.floatpoint.PairFloatComponentImpl;
+import ru.rougegibbons.landsanddungeons.components.core.numbers.constant.floatpoint.PairFloatComponentImpl;
 import ru.rougegibbons.landsanddungeons.components.models.core.numbers.*;
 import ru.rougegibbons.landsanddungeons.components.models.core.string.StringComponentModel;
 import ru.rougegibbons.landsanddungeons.components.models.core.string.parsers.MarkdownStringComponentModel;

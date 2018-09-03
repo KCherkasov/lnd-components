@@ -1,4 +1,4 @@
-package ru.rougegibbons.landsanddungeons.components.core.numbers.generic;
+package ru.rougegibbons.landsanddungeons.components.core.numbers.constant.generic;
 
 import org.jetbrains.annotations.NotNull;
 import ru.rougegibbons.landsanddungeons.components.core.AbstractComponent;

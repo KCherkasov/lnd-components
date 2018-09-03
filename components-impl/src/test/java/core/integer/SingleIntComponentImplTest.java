@@ -2,7 +2,7 @@ package core.integer;
 
 import org.jetbrains.annotations.NotNull;
 import org.junit.jupiter.api.Test;
-import ru.rougegibbons.landsanddungeons.components.core.numbers.integer.SingleIntComponentImpl;
+import ru.rougegibbons.landsanddungeons.components.core.numbers.constant.integer.SingleIntComponentImpl;
 import ru.rougegibbons.landsanddungeons.components.models.ComponentModel;
 import ru.rougegibbons.landsanddungeons.components.models.core.numbers.SingleIntComponentModel;
 import ru.rougegibbons.landsanddungeons.utils.constants.Constants;
