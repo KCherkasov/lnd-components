@@ -94,11 +94,11 @@ public class ModifiableSingleFloatComponentImpl extends ModifiableSingleNumberCo
     /**
      * see {@link ModifiableSingleNumberComponentImpl} description.
      *
-     * @param value - value to convert.
+     * @param source - value to convert.
      * @return converted value.
      */
     @Override
-    protected @NotNull Float floatToType(@NotNull Float value) {
-        return value;
+    protected @NotNull Float floatToType(@NotNull Float source) {
+        return source;
     }
 }

@@ -94,11 +94,11 @@ public class ModifiableSingleIntComponentImpl extends ModifiableSingleNumberComp
     /**
      * see {@link ModifiableSingleNumberComponentImpl} description.
      *
-     * @param value - value to convert.
+     * @param source - value to convert.
      * @return converted value.
      */
     @Override
-    protected @NotNull Integer floatToType(@NotNull Float value) {
-        return value.intValue();
+    protected @NotNull Integer floatToType(@NotNull Float source) {
+        return source.intValue();
     }
 }

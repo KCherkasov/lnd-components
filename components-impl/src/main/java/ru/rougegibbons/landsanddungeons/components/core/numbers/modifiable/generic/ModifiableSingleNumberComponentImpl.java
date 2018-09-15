@@ -127,11 +127,10 @@ public abstract class ModifiableSingleNumberComponentImpl<T extends Number>
     /**
      * converts float point number to concrete {@link Number} extension class.
      *
-     * @param value - value to convert.
+     * @param source - value to convert.
      * @return converted value.
      */
-    @SuppressWarnings("HiddenField")
-    protected abstract @NotNull T floatToType(@NotNull Float value);
+    protected abstract @NotNull T floatToType(@NotNull Float source);
 
     /**
      * converts integer percentage value into float point form.

@@ -94,11 +94,11 @@ public class ModifiableSingleLongComponentImpl extends ModifiableSingleNumberCom
     /**
      * see {@link ModifiableSingleNumberComponentImpl} description.
      *
-     * @param value - value to convert.
+     * @param source - value to convert.
      * @return converted value.
      */
     @Override
-    protected @NotNull Long floatToType(@NotNull Float value) {
-        return value.longValue();
+    protected @NotNull Long floatToType(@NotNull Float source) {
+        return source.longValue();
     }
 }
