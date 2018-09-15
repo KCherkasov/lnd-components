@@ -5,7 +5,6 @@ import ru.rougegibbons.landsanddungeons.components.core.AbstractComponent;
 import ru.rougegibbons.landsanddungeons.components.interfaces.core.numbers.ModifiablePairNumberComponent;
 import ru.rougegibbons.landsanddungeons.utils.constants.Constants;
 import ru.rougegibbons.landsanddungeons.utils.functions.FloatMath;
-import ru.rougegibbons.landsanddungeons.utils.functions.MathUtils;
 import ru.rougegibbons.landsanddungeons.utils.proxies.ArithmeticsProxy;
 
 import java.util.ArrayList;
@@ -281,7 +280,8 @@ public abstract class ModifiablePairNumberComponentImpl<T extends Number>
      */
     @Override
     public void modifyFirstByPercentage(@NotNull Float percent) {
-        firstValue = floatToType(FloatMath.multiply(firstValue.floatValue(), percent));
+        firstValue = floatToType(FloatMath.multiply(firstValue.floatValue(),
+                Constants.PERCENTAGE_CAP_FLOAT + percent));
     }
 
     /**
@@ -301,7 +301,8 @@ public abstract class ModifiablePairNumberComponentImpl<T extends Number>
      */
     @Override
     public void modifySecondByPercentage(@NotNull Float percent) {
-        secondValue = floatToType(FloatMath.multiply(secondValue.floatValue(), percent));
+        secondValue = floatToType(FloatMath.multiply(secondValue.floatValue(),
+                Constants.PERCENTAGE_CAP_FLOAT + percent));
     }
 
     /**
@@ -331,8 +332,6 @@ public abstract class ModifiablePairNumberComponentImpl<T extends Number>
      * @return float point percentage.
      */
     private @NotNull Float toPercent(@NotNull Integer percent) {
-        return MathUtils.trimMin(Constants.ZERO_FLOAT,
-                FloatMath.divide(percent.floatValue(),
-                        (float) Constants.PERCENTAGE_CAP_INT));
+        return FloatMath.divide(percent.floatValue(), (float) Constants.PERCENTAGE_CAP_INT);
     }
 }

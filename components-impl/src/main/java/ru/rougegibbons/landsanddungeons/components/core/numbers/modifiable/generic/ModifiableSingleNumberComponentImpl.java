@@ -5,7 +5,6 @@ import ru.rougegibbons.landsanddungeons.components.core.AbstractComponent;
 import ru.rougegibbons.landsanddungeons.components.interfaces.core.numbers.ModifiableSingleNumberComponent;
 import ru.rougegibbons.landsanddungeons.utils.constants.Constants;
 import ru.rougegibbons.landsanddungeons.utils.functions.FloatMath;
-import ru.rougegibbons.landsanddungeons.utils.functions.MathUtils;
 import ru.rougegibbons.landsanddungeons.utils.proxies.ArithmeticsProxy;
 
 /**
@@ -97,7 +96,8 @@ public abstract class ModifiableSingleNumberComponentImpl<T extends Number>
      */
     @Override
     public void modifyByPercentage(@NotNull Float percent) {
-        value = floatToType(FloatMath.multiply(value.floatValue(), percent));
+        value = floatToType(FloatMath.multiply(value.floatValue(),
+                Constants.PERCENTAGE_CAP_FLOAT + percent));
     }
 
     /**
@@ -139,8 +139,6 @@ public abstract class ModifiableSingleNumberComponentImpl<T extends Number>
      * @return float point percentage.
      */
     private @NotNull Float toPercent(@NotNull Integer percent) {
-        return MathUtils.trimMin(Constants.ZERO_FLOAT,
-                FloatMath.divide(percent.floatValue(),
-                        (float) Constants.PERCENTAGE_CAP_INT));
+        return FloatMath.divide(percent.floatValue(), (float) Constants.PERCENTAGE_CAP_INT);
     }
 }

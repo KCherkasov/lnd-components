@@ -6,7 +6,6 @@ import ru.rougegibbons.landsanddungeons.components.interfaces.core.numbers.Modif
 import ru.rougegibbons.landsanddungeons.utils.constants.Constants;
 import ru.rougegibbons.landsanddungeons.utils.constants.IdsConstants;
 import ru.rougegibbons.landsanddungeons.utils.functions.FloatMath;
-import ru.rougegibbons.landsanddungeons.utils.functions.MathUtils;
 import ru.rougegibbons.landsanddungeons.utils.proxies.ArithmeticsProxy;
 import ru.rougegibbons.landsanddungeons.utils.proxies.ComparatorProxy;
 
@@ -120,8 +119,10 @@ public abstract class ModifiableOrderedPairNumberComponentImpl<T extends Number>
      */
     @Override
     public void setFirstValue(@NotNull T value) {
-        firstValue = defineFirstValue(value, secondValue);
-        secondValue = defineSecondValue(value, secondValue);
+        firstValue = value;
+        if (getComparatorProxy().isGreater(firstValue, secondValue)) {
+            swap();
+        }
     }
 
     /**
@@ -131,8 +132,10 @@ public abstract class ModifiableOrderedPairNumberComponentImpl<T extends Number>
      */
     @Override
     public void setSecondValue(@NotNull T value) {
-        firstValue = defineFirstValue(firstValue, value);
-        secondValue = defineSecondValue(firstValue, value);
+        secondValue = value;
+        if (getComparatorProxy().isLess(secondValue, firstValue)) {
+            swap();
+        }
     }
 
     /**
@@ -252,8 +255,10 @@ public abstract class ModifiableOrderedPairNumberComponentImpl<T extends Number>
      */
     @Override
     public void modifyBothByPercentage(@NotNull Float percent) {
-        firstValue = floatToType(FloatMath.multiply(firstValue.floatValue(), percent));
-        secondValue = floatToType(FloatMath.multiply(secondValue.floatValue(), percent));
+        firstValue = floatToType(FloatMath.multiply(firstValue.floatValue(),
+                Constants.PERCENTAGE_CAP_FLOAT + percent));
+        secondValue = floatToType(FloatMath.multiply(secondValue.floatValue(),
+                Constants.PERCENTAGE_CAP_FLOAT + percent));
     }
 
     /**
@@ -263,7 +268,7 @@ public abstract class ModifiableOrderedPairNumberComponentImpl<T extends Number>
      */
     @Override
     public void modifyBothByPercentage(@NotNull Integer percent) {
-
+        modifyBothByPercentage(toPercent(percent));
     }
 
     /**
@@ -275,8 +280,14 @@ public abstract class ModifiableOrderedPairNumberComponentImpl<T extends Number>
     @Override
     public void modifyBothByPercentage(@NotNull Float firstPercent,
                                        @NotNull Float secondPercent) {
-        modifyFirstByPercentage(firstPercent);
-        modifySecondByPercentage(secondPercent);
+        firstValue = floatToType(FloatMath.multiply(firstValue.floatValue(),
+                Constants.PERCENTAGE_CAP_FLOAT + firstPercent));
+        secondValue = floatToType(FloatMath.multiply(secondValue.floatValue(),
+                Constants.PERCENTAGE_CAP_FLOAT + secondPercent));
+        if (!getComparatorProxy().areEqual(
+                defineFirstValue(firstValue, secondValue), firstValue)) {
+            swap();
+        }
     }
 
     /**
@@ -288,8 +299,7 @@ public abstract class ModifiableOrderedPairNumberComponentImpl<T extends Number>
     @Override
     public void modifyBothByPercentage(@NotNull Integer firstPercent,
                                        @NotNull Integer secondPercent) {
-        modifyFirstByPercentage(firstPercent);
-        modifySecondByPercentage(secondPercent);
+        modifyBothByPercentage(toPercent(firstPercent), toPercent(secondPercent));
     }
 
     /**
@@ -299,7 +309,8 @@ public abstract class ModifiableOrderedPairNumberComponentImpl<T extends Number>
      */
     @Override
     public void modifyFirstByPercentage(@NotNull Float percent) {
-        firstValue = floatToType(FloatMath.multiply(firstValue.floatValue(), percent));
+        firstValue = floatToType(FloatMath.multiply(firstValue.floatValue(),
+                Constants.PERCENTAGE_CAP_FLOAT + percent));
         if (!getComparatorProxy().areEqual(
                 defineFirstValue(firstValue, secondValue), firstValue)) {
             swap();
@@ -323,7 +334,8 @@ public abstract class ModifiableOrderedPairNumberComponentImpl<T extends Number>
      */
     @Override
     public void modifySecondByPercentage(@NotNull Float percent) {
-        secondValue = floatToType(FloatMath.multiply(secondValue.floatValue(), percent));
+        secondValue = floatToType(FloatMath.multiply(secondValue.floatValue(),
+                Constants.PERCENTAGE_CAP_FLOAT + percent));
         if (!getComparatorProxy().areEqual(
                 defineSecondValue(firstValue, secondValue), secondValue)) {
             swap();
@@ -407,7 +419,6 @@ public abstract class ModifiableOrderedPairNumberComponentImpl<T extends Number>
      * @return float percentage representation.
      */
     private @NotNull Float toPercent(@NotNull Integer percentage) {
-        return MathUtils.trimMin(Constants.ZERO_FLOAT, FloatMath.divide(
-                percentage.floatValue(), (float) Constants.PERCENTAGE_CAP_INT));
+        return FloatMath.divide(percentage.floatValue(), (float) Constants.PERCENTAGE_CAP_INT);
     }
 }
