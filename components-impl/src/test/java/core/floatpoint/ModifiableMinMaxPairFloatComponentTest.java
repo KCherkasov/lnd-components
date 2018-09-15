@@ -350,7 +350,6 @@ public final class ModifiableMinMaxPairFloatComponentTest {
                                      @NotNull Float value) {
         final Float first = component.getFirstValue();
         component.setSecondValue(value);
-        System.out.println("first: " + component.getFirstValue() + " second: " + component.getSecondValue());
         if (FloatComparator.isLess(value, first)) {
             getSecondValueCheck(component, first);
         } else {
