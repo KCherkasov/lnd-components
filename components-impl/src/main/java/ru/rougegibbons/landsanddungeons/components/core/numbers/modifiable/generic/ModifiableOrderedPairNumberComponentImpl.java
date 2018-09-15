@@ -358,7 +358,7 @@ public abstract class ModifiableOrderedPairNumberComponentImpl<T extends Number>
     protected abstract void initValues();
 
     /**
-     * converts {@link Float} number to the stored number's type
+     * converts {@link Float} number to the stored number's type.
      *
      * @param value - {@link Float} number.
      * @return converted value.

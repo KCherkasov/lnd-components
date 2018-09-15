@@ -130,6 +130,7 @@ public abstract class ModifiableSingleNumberComponentImpl<T extends Number>
      * @param value - value to convert.
      * @return converted value.
      */
+    @SuppressWarnings("HiddenField")
     protected abstract @NotNull T floatToType(@NotNull Float value);
 
     /**
