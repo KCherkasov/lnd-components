@@ -2,7 +2,7 @@ package ru.rougegibbons.landsanddungeons.components.models.core.numbers;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import org.jetbrains.annotations.NotNull;
-import ru.rougegibbons.landsanddungeons.components.core.numbers.longint.PairLongComponentImpl;
+import ru.rougegibbons.landsanddungeons.components.core.numbers.constant.longint.PairLongComponentImpl;
 import ru.rougegibbons.landsanddungeons.components.models.ComponentModel;
 
 /**

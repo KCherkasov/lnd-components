@@ -2,7 +2,7 @@ package core.floatpoint;
 
 import org.jetbrains.annotations.NotNull;
 import org.junit.jupiter.api.Test;
-import ru.rougegibbons.landsanddungeons.components.core.numbers.floatpoint.SingleFloatComponentImpl;
+import ru.rougegibbons.landsanddungeons.components.core.numbers.constant.floatpoint.SingleFloatComponentImpl;
 import ru.rougegibbons.landsanddungeons.components.models.ComponentModel;
 import ru.rougegibbons.landsanddungeons.components.models.core.numbers.SingleFloatComponentModel;
 import ru.rougegibbons.landsanddungeons.utils.constants.Constants;

@@ -2,7 +2,7 @@ package core.longint;
 
 import org.jetbrains.annotations.NotNull;
 import org.junit.jupiter.api.Test;
-import ru.rougegibbons.landsanddungeons.components.core.numbers.longint.SingleLongComponentImpl;
+import ru.rougegibbons.landsanddungeons.components.core.numbers.constant.longint.SingleLongComponentImpl;
 import ru.rougegibbons.landsanddungeons.components.models.ComponentModel;
 import ru.rougegibbons.landsanddungeons.components.models.core.numbers.SingleLongComponentModel;
 import ru.rougegibbons.landsanddungeons.utils.constants.Constants;
