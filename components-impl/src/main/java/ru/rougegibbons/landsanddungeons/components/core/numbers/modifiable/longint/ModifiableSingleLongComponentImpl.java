@@ -90,15 +90,4 @@ public class ModifiableSingleLongComponentImpl extends ModifiableSingleNumberCom
     protected @NotNull ArithmeticsProxy.LongArithmeticsProxy getArithmeticsProxy() {
         return ARITHMETICS_PROXY;
     }
-
-    /**
-     * see {@link ModifiableSingleNumberComponentImpl} description.
-     *
-     * @param source - value to convert.
-     * @return converted value.
-     */
-    @Override
-    protected @NotNull Long floatToType(@NotNull Float source) {
-        return source.longValue();
-    }
 }

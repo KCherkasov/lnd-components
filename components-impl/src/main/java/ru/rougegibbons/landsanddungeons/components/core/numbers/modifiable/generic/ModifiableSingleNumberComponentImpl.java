@@ -3,8 +3,6 @@ package ru.rougegibbons.landsanddungeons.components.core.numbers.modifiable.gene
 import org.jetbrains.annotations.NotNull;
 import ru.rougegibbons.landsanddungeons.components.core.AbstractComponent;
 import ru.rougegibbons.landsanddungeons.components.interfaces.core.numbers.ModifiableSingleNumberComponent;
-import ru.rougegibbons.landsanddungeons.utils.constants.Constants;
-import ru.rougegibbons.landsanddungeons.utils.functions.FloatMath;
 import ru.rougegibbons.landsanddungeons.utils.proxies.ArithmeticsProxy;
 
 /**
@@ -96,8 +94,7 @@ public abstract class ModifiableSingleNumberComponentImpl<T extends Number>
      */
     @Override
     public void modifyByPercentage(@NotNull Float percent) {
-        value = floatToType(FloatMath.multiply(value.floatValue(),
-                Constants.PERCENTAGE_CAP_FLOAT + percent));
+        value = getArithmeticsProxy().modifyByPercentage(value, percent);
     }
 
     /**
@@ -107,7 +104,7 @@ public abstract class ModifiableSingleNumberComponentImpl<T extends Number>
      */
     @Override
     public void modifyByPercentage(@NotNull Integer percent) {
-        modifyByPercentage(toPercent(percent));
+        value = getArithmeticsProxy().modifyByPercentage(value, percent);
     }
 
     /**
@@ -123,22 +120,4 @@ public abstract class ModifiableSingleNumberComponentImpl<T extends Number>
      * @return {@link ArithmeticsProxy} instance for class.
      */
     protected abstract @NotNull ArithmeticsProxy<T> getArithmeticsProxy();
-
-    /**
-     * converts float point number to concrete {@link Number} extension class.
-     *
-     * @param source - value to convert.
-     * @return converted value.
-     */
-    protected abstract @NotNull T floatToType(@NotNull Float source);
-
-    /**
-     * converts integer percentage value into float point form.
-     *
-     * @param percent - integer percentage.
-     * @return float point percentage.
-     */
-    private @NotNull Float toPercent(@NotNull Integer percent) {
-        return FloatMath.divide(percent.floatValue(), (float) Constants.PERCENTAGE_CAP_INT);
-    }
 }

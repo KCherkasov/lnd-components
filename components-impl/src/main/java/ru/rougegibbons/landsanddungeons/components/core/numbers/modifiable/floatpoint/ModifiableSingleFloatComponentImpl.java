@@ -90,15 +90,4 @@ public class ModifiableSingleFloatComponentImpl extends ModifiableSingleNumberCo
     protected @NotNull ArithmeticsProxy.FloatArithmeticsProxy getArithmeticsProxy() {
         return ARITHMETICS_PROXY;
     }
-
-    /**
-     * see {@link ModifiableSingleNumberComponentImpl} description.
-     *
-     * @param source - value to convert.
-     * @return converted value.
-     */
-    @Override
-    protected @NotNull Float floatToType(@NotNull Float source) {
-        return source;
-    }
 }
