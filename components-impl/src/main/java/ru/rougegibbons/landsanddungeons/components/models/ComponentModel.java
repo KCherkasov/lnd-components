@@ -25,7 +25,11 @@ import ru.rougegibbons.landsanddungeons.components.models.core.string.parsers.Su
 
         @JsonSubTypes.Type(PairIntComponentModel.class),
         @JsonSubTypes.Type(PairLongComponentModel.class),
-        @JsonSubTypes.Type(PairFloatComponentImpl.class)
+        @JsonSubTypes.Type(PairFloatComponentImpl.class),
+
+        @JsonSubTypes.Type(ClampedIntComponentModel.class),
+        @JsonSubTypes.Type(ClampedLongComponentModel.class),
+        @JsonSubTypes.Type(ClampedFloatComponentModel.class)
 })
 public abstract class ComponentModel {
     private final Long id;

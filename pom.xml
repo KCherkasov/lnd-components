@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>ru.rougegibbons.landsanddungeons</groupId>
     <artifactId>components</artifactId>
-    <version>0.2.3</version>
+    <version>0.3.5</version>
     <modules>
         <module>components-impl</module>
         <module>lnd-utils</module>
