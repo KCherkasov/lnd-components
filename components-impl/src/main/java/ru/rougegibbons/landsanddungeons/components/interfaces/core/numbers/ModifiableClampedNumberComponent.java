@@ -55,7 +55,7 @@ public interface ModifiableClampedNumberComponent<T extends Number>
      *
      * @param amount - amount to increase both boundaries on.
      */
-    void increaseBoth(@NotNull T amount);
+    void increaseBoundaries(@NotNull T amount);
 
     /**
      * increases both boundaries on differen amounts.
@@ -63,8 +63,8 @@ public interface ModifiableClampedNumberComponent<T extends Number>
      * @param lower - amount to increase lower boundary on.
      * @param upper - amount to increase upper boundary on.
      */
-    void increaseBoth(@NotNull T lower,
-                      @NotNull T upper);
+    void increaseBoundaries(@NotNull T lower,
+                            @NotNull T upper);
 
     /**
      * decreases lower boundary on given amount.
@@ -85,7 +85,7 @@ public interface ModifiableClampedNumberComponent<T extends Number>
      *
      * @param amount - amount to decrease both boundaries on.
      */
-    void decreaseBoth(@NotNull T amount);
+    void decreaseBoundaries(@NotNull T amount);
 
     /**
      * decreases both boundaries on different amounts.
@@ -93,8 +93,8 @@ public interface ModifiableClampedNumberComponent<T extends Number>
      * @param lower - amount to decrease lower boundary on.
      * @param upper - amount to decrease upper boundary on.
      */
-    void decreaseBoth(@NotNull T lower,
-                      @NotNull T upper);
+    void decreaseBoundaries(@NotNull T lower,
+                            @NotNull T upper);
 
     /**
      * modifies lower boundary by given percentage.
@@ -129,14 +129,14 @@ public interface ModifiableClampedNumberComponent<T extends Number>
      *
      * @param percent - percentage to modify both boundaries.
      */
-    void modifyBothByPercentage(@NotNull Integer percent);
+    void modifyBoundariesByPercentage(@NotNull Integer percent);
 
     /**
      * modifies both boundaries by given percentage.
      *
      * @param percent - percentage to modify both boundaries.
      */
-    void modifyBothByPercentage(@NotNull Float percent);
+    void modifyBoundariesByPercentage(@NotNull Float percent);
 
     /**
      * modifies both boundaries by different percentages.
@@ -144,8 +144,8 @@ public interface ModifiableClampedNumberComponent<T extends Number>
      * @param lower - percentage to modify lower boundary.
      * @param upper - percentage to modify upper boundary.
      */
-    void modifyBothByPercentage(@NotNull Integer lower,
-                                @NotNull Integer upper);
+    void modifyBoundariesByPercentage(@NotNull Integer lower,
+                                      @NotNull Integer upper);
 
     /**
      * modifies both boundaries by different percentages.
@@ -153,6 +153,21 @@ public interface ModifiableClampedNumberComponent<T extends Number>
      * @param lower - percentage to modify lower boundary.
      * @param upper - percentage to modify upper boundary.
      */
-    void modifyBothByPercentage(@NotNull Float lower,
-                                @NotNull Float upper);
+    void modifyBoundariesByPercentage(@NotNull Float lower,
+                                      @NotNull Float upper);
+
+    interface ModifiableClampedIntegerComponent
+            extends ModifiableClampedNumberComponent<Integer> {
+
+    }
+
+    interface ModifiableClampedLongComponent
+            extends ModifiableClampedNumberComponent<Long> {
+
+    }
+
+    interface ModifiableClampedFloatComponent
+            extends ModifiableClampedNumberComponent<Float> {
+
+    }
 }

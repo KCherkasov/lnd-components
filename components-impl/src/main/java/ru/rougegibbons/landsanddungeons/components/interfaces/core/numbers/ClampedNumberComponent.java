@@ -105,4 +105,16 @@ public interface ClampedNumberComponent<T extends Number> extends PackableCompon
      * @param percent - percentage to alter current value.
      */
     void modifyCurrentValueByPercentage(@NotNull Float percent);
+
+    interface ClampedIntegerComponent extends ClampedNumberComponent<Integer> {
+
+    }
+
+    interface ClampedLongComponent extends ClampedNumberComponent<Long> {
+
+    }
+
+    interface ClampedFloatComponent extends ClampedNumberComponent<Float> {
+
+    }
 }
