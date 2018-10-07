@@ -392,6 +392,7 @@ public abstract class ModifiableClampedNumberComponentImpl<T extends Number>
     @Override
     public void modifyUpperByPercentage(@NotNull Float percent) {
         upperBoundary = getArithmeticsProxy().modifyByPercentage(upperBoundary, percent);
+        swapAndClamp();
     }
 
     /**

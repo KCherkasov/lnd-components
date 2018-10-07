@@ -4,6 +4,8 @@ import org.jetbrains.annotations.NotNull;
 import org.junit.jupiter.api.Test;
 import ru.rougegibbons.landsanddungeons.components.core.numbers.modifiable.longint.ClampedLongComponentImpl;
 import ru.rougegibbons.landsanddungeons.components.interfaces.core.numbers.ClampedNumberComponent;
+import ru.rougegibbons.landsanddungeons.components.models.ComponentModel;
+import ru.rougegibbons.landsanddungeons.components.models.core.numbers.ClampedLongComponentModel;
 import ru.rougegibbons.landsanddungeons.utils.constants.Constants;
 import ru.rougegibbons.landsanddungeons.utils.constants.IdsConstants;
 import ru.rougegibbons.landsanddungeons.utils.functions.FloatMath;
@@ -11,8 +13,11 @@ import ru.rougegibbons.landsanddungeons.utils.proxies.LongArithmeticsProxyImpl;
 
 import java.util.List;
 
+import static org.hamcrest.CoreMatchers.instanceOf;
+import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
 
+@SuppressWarnings("Duplicates")
 public final class ClampedLongComponentImplTest {
     @Test
     public void idGeneratorTest() {
@@ -269,6 +274,20 @@ public final class ClampedLongComponentImplTest {
                 Constants.ZERO_LONG, Constants.PERCENTAGE_CAP_FLOAT);
     }
 
+    @Test
+    public void packTest() {
+        packCheck(Constants.ZERO_LONG, Constants.ZERO_LONG,
+                (long) Constants.PERCENTAGE_CAP_INT);
+        packCheck((long) Constants.PERCENTAGE_CAP_INT,
+                Constants.ZERO_LONG, Constants.ZERO_LONG);
+        packCheck(Constants.ZERO_LONG, (long) Constants.PERCENTAGE_CAP_INT,
+                (long) Constants.PERCENTAGE_CAP_INT);
+        packCheck((long) Constants.PERCENTAGE_CAP_INT,
+                (long) Constants.WIDE_PERCENTAGE_CAP_INT, Constants.ZERO_LONG);
+        packCheck(Constants.ZERO_LONG, (long) Constants.WIDE_PERCENTAGE_CAP_INT,
+                (long) Constants.PERCENTAGE_CAP_INT);
+    }
+
     private @NotNull ClampedNumberComponent.ClampedLongComponent prepareComponent(
             @NotNull Long lowerBoundary,
             @NotNull Long upperBoundary,
@@ -462,6 +481,30 @@ public final class ClampedLongComponentImplTest {
         component.modifyCurrentValueByPercentage(percent);
         checkEquality(newExpected, component.getCurrentValue(),
                 "modifyCurrentValueByPercentage(Integer) new");
+    }
+
+    private void packCheck(@NotNull Long lower,
+                           @NotNull Long upper,
+                           @NotNull Long current) {
+        final ClampedNumberComponent.ClampedLongComponent component =
+                prepareComponent(lower, upper, current);
+        final ComponentModel rawModel = component.pack();
+        assertThat(rawModel, instanceOf(ClampedLongComponentModel.class));
+        final ClampedLongComponentModel model = (ClampedLongComponentModel) rawModel;
+        checkEquality(component.getId(), model.getId(),
+                "component.getId() vs model.getId()");
+        checkEquality(component.getLowerBoundary(), model.getLowerBoundary(),
+                "component.getLowerBoundary() vs model.getLowerBoundary()");
+        checkEquality(component.getUpperBoundary(), model.getUpperBoundary(),
+                "component.getUpperBoundary() vs model.getUpperBoundary()");
+        final ClampedNumberComponent.ClampedLongComponent restored =
+                new ClampedLongComponentImpl(model);
+        checkEquality(component.getId(), restored.getId(),
+                "component.getId() vs restored.getId()");
+        checkEquality(component.getLowerBoundary(), restored.getLowerBoundary(),
+                "component.getLowerBoundary() vs restored.getLowerBoundary()");
+        assertEquals(component.getUpperBoundary(), restored.getUpperBoundary(),
+                "component.getUpperBoundary() vs restored.getUpperBoundary()");
     }
 
     private void checkEquality(@NotNull Long expected,

@@ -4,6 +4,8 @@ import org.jetbrains.annotations.NotNull;
 import org.junit.jupiter.api.Test;
 import ru.rougegibbons.landsanddungeons.components.core.numbers.modifiable.floatpoint.ClampedFloatComponentImpl;
 import ru.rougegibbons.landsanddungeons.components.interfaces.core.numbers.ClampedNumberComponent;
+import ru.rougegibbons.landsanddungeons.components.models.ComponentModel;
+import ru.rougegibbons.landsanddungeons.components.models.core.numbers.ClampedFloatComponentModel;
 import ru.rougegibbons.landsanddungeons.utils.constants.Constants;
 import ru.rougegibbons.landsanddungeons.utils.constants.IdsConstants;
 import ru.rougegibbons.landsanddungeons.utils.functions.FloatComparator;
@@ -13,8 +15,11 @@ import ru.rougegibbons.landsanddungeons.utils.proxies.FloatArithmeticsProxyImpl;
 
 import java.util.List;
 
+import static org.hamcrest.CoreMatchers.instanceOf;
+import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
 
+@SuppressWarnings("Duplicates")
 public final class ClampedFloatComponentImplTest {
     @Test
     public void idGeneratorTest() {
@@ -294,6 +299,20 @@ public final class ClampedFloatComponentImplTest {
                 Constants.PERCENTAGE_CAP_FLOAT);
     }
 
+    @Test
+    public void packTest() {
+        packCheck(Constants.ZERO_FLOAT, Constants.ZERO_FLOAT,
+                Constants.PERCENTAGE_CAP_FLOAT);
+        packCheck(Constants.PERCENTAGE_CAP_FLOAT,
+                Constants.ZERO_FLOAT, Constants.ZERO_FLOAT);
+        packCheck(Constants.ZERO_FLOAT, Constants.PERCENTAGE_CAP_FLOAT,
+                Constants.PERCENTAGE_CAP_FLOAT);
+        packCheck((float) Constants.PERCENTAGE_CAP_INT,
+                (float) Constants.WIDE_PERCENTAGE_CAP_INT, Constants.ZERO_FLOAT);
+        packCheck(Constants.ZERO_FLOAT, (float) Constants.WIDE_PERCENTAGE_CAP_INT,
+                (float) Constants.PERCENTAGE_CAP_INT);
+    }
+
     private @NotNull ClampedNumberComponent.ClampedFloatComponent prepareComponent(
             @NotNull Float lowerBoundary,
             @NotNull Float upperBoundary,
@@ -491,8 +510,39 @@ public final class ClampedFloatComponentImplTest {
                 "modifyCurrentValueByPercentage(Integer) new");
     }
 
+    private void packCheck(@NotNull Float lower,
+                           @NotNull Float upper,
+                           @NotNull Float current) {
+        final ClampedNumberComponent.ClampedFloatComponent component =
+                prepareComponent(lower, upper, current);
+        final ComponentModel rawModel = component.pack();
+        assertThat(rawModel, instanceOf(ClampedFloatComponentModel.class));
+        final ClampedFloatComponentModel model = (ClampedFloatComponentModel) rawModel;
+        checkEquality(component.getId(), model.getId(),
+                "component.getId() vs model.getId()");
+        checkEquality(component.getLowerBoundary(), model.getLowerBoundary(),
+                "component.getLowerBoundary() vs model.getLowerBoundary()");
+        checkEquality(component.getUpperBoundary(), model.getUpperBoundary(),
+                "component.getUpperBoundary() vs model.getUpperBoundary()");
+        final ClampedNumberComponent.ClampedFloatComponent restored =
+                new ClampedFloatComponentImpl(model);
+        checkEquality(component.getId(), restored.getId(),
+                "component.getId() vs restored.getId()");
+        checkEquality(component.getLowerBoundary(), restored.getLowerBoundary(),
+                "component.getLowerBoundary() vs restored.getLowerBoundary()");
+        assertEquals(component.getUpperBoundary(), restored.getUpperBoundary(),
+                "component.getUpperBoundary() vs restored.getUpperBoundary()");
+    }
+
     private void checkEquality(@NotNull Integer expected,
                                @NotNull Integer actual,
+                               @NotNull String message) {
+        assertEquals(expected, actual, message + ": expected "
+                + expected + " but found " + actual + '.');
+    }
+
+    private void checkEquality(@NotNull Long expected,
+                               @NotNull Long actual,
                                @NotNull String message) {
         assertEquals(expected, actual, message + ": expected "
                 + expected + " but found " + actual + '.');
