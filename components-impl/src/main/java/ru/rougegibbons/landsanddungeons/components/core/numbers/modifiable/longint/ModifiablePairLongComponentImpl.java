@@ -90,15 +90,4 @@ public class ModifiablePairLongComponentImpl extends ModifiablePairNumberCompone
     protected @NotNull ArithmeticsProxy.LongArithmeticsProxy getArithmeticsProxy() {
         return ARITHMETICS_PROXY;
     }
-
-    /**
-     * see {@link ModifiablePairNumberComponentImpl} description.
-     *
-     * @param value - value to convert.
-     * @return converted value.
-     */
-    @Override
-    protected @NotNull Long floatToType(@NotNull Float value) {
-        return value.longValue();
-    }
 }

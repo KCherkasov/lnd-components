@@ -90,15 +90,4 @@ public class ModifiablePairIntComponentImpl extends ModifiablePairNumberComponen
     protected @NotNull ArithmeticsProxy.IntArithmeticsProxy getArithmeticsProxy() {
         return ARITHMETICS_PROXY;
     }
-
-    /**
-     * see {@link ModifiablePairNumberComponentImpl} description.
-     *
-     * @param value - value to convert.
-     * @return converted value.
-     */
-    @Override
-    protected @NotNull Integer floatToType(@NotNull Float value) {
-        return value.intValue();
-    }
 }

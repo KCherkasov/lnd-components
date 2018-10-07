@@ -109,17 +109,6 @@ public class ModifiableMinMaxPairLongComponent extends ModifiableOrderedPairNumb
     }
 
     /**
-     * see {@link ModifiableOrderedPairNumberComponentImpl} decription.
-     *
-     * @param value - {@link Float} number.
-     * @return converted value.
-     */
-    @Override
-    protected @NotNull Long floatToType(@NotNull Float value) {
-        return value.longValue();
-    }
-
-    /**
      * determines which of two numbers will be stored as first. This implementation picks lesser number as first.
      *
      * @param first  - first number.
