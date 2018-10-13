@@ -1,7 +1,7 @@
 package ru.rougegibbons.landsanddungeons.components.interfaces.core.numbers;
 
 import org.jetbrains.annotations.NotNull;
-import ru.rougegibbons.landsanddungeons.components.interfaces.PackableComponent;
+import ru.rougegibbons.landsanddungeons.components.interfaces.core.mixins.PackableComponent;
 
 import java.util.List;
 

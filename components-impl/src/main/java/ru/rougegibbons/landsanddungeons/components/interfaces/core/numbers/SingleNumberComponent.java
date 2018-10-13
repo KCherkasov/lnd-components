@@ -1,7 +1,7 @@
 package ru.rougegibbons.landsanddungeons.components.interfaces.core.numbers;
 
 import org.jetbrains.annotations.NotNull;
-import ru.rougegibbons.landsanddungeons.components.interfaces.PackableComponent;
+import ru.rougegibbons.landsanddungeons.components.interfaces.core.mixins.PackableComponent;
 
 /**
  * Generic interface for components containing single number.

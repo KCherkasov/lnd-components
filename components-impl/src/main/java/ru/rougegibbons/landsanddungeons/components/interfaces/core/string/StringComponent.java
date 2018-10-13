@@ -1,7 +1,7 @@
 package ru.rougegibbons.landsanddungeons.components.interfaces.core.string;
 
 import org.jetbrains.annotations.NotNull;
-import ru.rougegibbons.landsanddungeons.components.interfaces.PackableComponent;
+import ru.rougegibbons.landsanddungeons.components.interfaces.core.mixins.PackableComponent;
 
 /**
  * {@link PackableComponent} interface extension for text containers.

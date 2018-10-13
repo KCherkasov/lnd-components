@@ -1,6 +1,7 @@
-package ru.rougegibbons.landsanddungeons.components.interfaces;
+package ru.rougegibbons.landsanddungeons.components.interfaces.core.mixins;
 
 import org.jetbrains.annotations.NotNull;
+import ru.rougegibbons.landsanddungeons.components.interfaces.Component;
 import ru.rougegibbons.landsanddungeons.components.models.ComponentModel;
 
 /**
