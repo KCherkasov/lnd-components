@@ -38,4 +38,32 @@ public interface AffectorComponent extends PackableComponent,
     default @NotNull Boolean isUpdateable() {
         return false;
     }
+
+
+    /**
+     * checks if affector instance has apply(Component) method.
+     *
+     * @return true if instance has apply(Component) method, false otherwise.
+     */
+    default @NotNull Boolean isAppliable() {
+        return false;
+    }
+
+    /**
+     * checks if affector's affection is parameter-based.
+     *
+     * @return true if instance affection is parameter-based, false otherwise.
+     */
+    default @NotNull Boolean isParameterBased() {
+        return false;
+    }
+
+    /**
+     * checks if this affector can be influenced by other affectors.
+     *
+     * @return true if affector can be influenced by other affectors, false otherwise.
+     */
+    default @NotNull Boolean isAffectable() {
+        return false;
+    }
 }

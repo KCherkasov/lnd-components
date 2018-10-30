@@ -3,6 +3,7 @@ package ru.rougegibbons.landsanddungeons.components.interfaces.core.affectors.on
 import org.jetbrains.annotations.NotNull;
 import ru.rougegibbons.landsanddungeons.components.interfaces.core.affectors.generic.AffectableAffectorComponent;
 import ru.rougegibbons.landsanddungeons.components.interfaces.core.affectors.generic.AffectorComponent;
+import ru.rougegibbons.landsanddungeons.components.interfaces.core.mixins.affectors.AppliableAffectorComponent;
 
 /**
  * {@link AffectorComponent} interface extension for affections
@@ -11,11 +12,15 @@ import ru.rougegibbons.landsanddungeons.components.interfaces.core.affectors.gen
  * @see AffectorComponent
  * @since 0.4.6
  */
-public interface OneTimeAffectorComponent extends AffectableAffectorComponent {
+public interface OneTimeAffectorComponent extends
+        AffectableAffectorComponent, AppliableAffectorComponent {
     /**
-     * checks if affection was applied or not.
+     * see {@link AffectorComponent} description.
      *
-     * @return true if affector was already handled, false otherwise and by default.
+     * @return always true.
      */
-    @NotNull Boolean isApplied();
+    @Override
+    default @NotNull Boolean isAppliable() {
+        return true;
+    }
 }

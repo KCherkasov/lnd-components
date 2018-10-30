@@ -33,4 +33,9 @@ public interface AffectableComponent {
      * @param affector - affector to remove.
      */
     void detachAffector(@NotNull AffectorComponent affector);
+
+    /**
+     * removes all affectors from the affectors list.
+     */
+    void detachAll();
 }

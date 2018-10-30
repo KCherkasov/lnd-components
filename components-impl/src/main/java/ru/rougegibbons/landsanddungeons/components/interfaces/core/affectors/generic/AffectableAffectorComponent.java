@@ -1,5 +1,6 @@
 package ru.rougegibbons.landsanddungeons.components.interfaces.core.affectors.generic;
 
+import org.jetbrains.annotations.NotNull;
 import ru.rougegibbons.landsanddungeons.components.interfaces.core.mixins.affectors.AffectableComponent;
 
 /**
@@ -12,4 +13,13 @@ import ru.rougegibbons.landsanddungeons.components.interfaces.core.mixins.affect
  */
 public interface AffectableAffectorComponent extends
         UpdateableAffectorComponent, AffectableComponent {
+    /**
+     * see {@link AffectorComponent} description.
+     *
+     * @return true.
+     */
+    @Override
+    default @NotNull Boolean isAffectable() {
+        return true;
+    }
 }
