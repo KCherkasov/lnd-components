@@ -6,8 +6,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import org.jetbrains.annotations.NotNull;
 import ru.rougegibbons.landsanddungeons.components.core.numbers.constant.floatpoint.PairFloatComponentImpl;
 import ru.rougegibbons.landsanddungeons.components.models.core.numbers.*;
-import ru.rougegibbons.landsanddungeons.components.models.core.properties.MarkdownedTextPropertyModel;
-import ru.rougegibbons.landsanddungeons.components.models.core.properties.PlainTextPropertyModel;
+import ru.rougegibbons.landsanddungeons.components.models.core.properties.*;
 import ru.rougegibbons.landsanddungeons.components.models.core.string.StringComponentModel;
 import ru.rougegibbons.landsanddungeons.components.models.core.string.parsers.MarkdownStringComponentModel;
 import ru.rougegibbons.landsanddungeons.components.models.core.string.parsers.SubstitutionsComponentModel;
@@ -34,17 +33,26 @@ import ru.rougegibbons.landsanddungeons.components.models.core.string.parsers.Su
         @JsonSubTypes.Type(ClampedFloatComponentModel.class),
 
         @JsonSubTypes.Type(PlainTextPropertyModel.class),
-        @JsonSubTypes.Type(MarkdownedTextPropertyModel.class)
+        @JsonSubTypes.Type(MarkdownedTextPropertyModel.class),
+        @JsonSubTypes.Type(NamePropertyModel.class),
+        @JsonSubTypes.Type(PlainDescriptionModel.class),
+        @JsonSubTypes.Type(MarkdownedDescriptionModel.class)
 })
 public abstract class ComponentModel {
     private final Long id;
 
+    /**
+     * default constructor. Serializes component id.
+     *
+     * @param id - instance id.
+     */
     public ComponentModel(@NotNull @JsonProperty("id") Long id) {
         this.id = id;
     }
 
     /**
      * get stored id.
+     *
      * @return stored id.
      */
     @JsonProperty("id")

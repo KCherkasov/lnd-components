@@ -72,6 +72,34 @@ public class MarkdownedTextPropertyComponentImpl
     }
 
     /**
+     * constructor for deserializing from derived classes' data models.
+     *
+     * @param id    - instance id.
+     * @param label - component label.
+     * @param text  - component text.
+     * @param tags  - component tags.
+     */
+    public MarkdownedTextPropertyComponentImpl(@NotNull Long id,
+                                               @NotNull Long label,
+                                               @NotNull String text,
+                                               @NotNull Set<String> tags) {
+        super(id, label, new MarkdownStringComponentImpl(text, tags));
+    }
+
+    /**
+     * constructor for deserializing from derived classes' data models.
+     *
+     * @param id    - instance id.
+     * @param label - component label.
+     * @param text  - component text.
+     */
+    public MarkdownedTextPropertyComponentImpl(@NotNull Long id,
+                                               @NotNull Long label,
+                                               @NotNull String text) {
+        super(id, label, text);
+    }
+
+    /**
      * see {@link MarkdownedTextPropertyComponent} description.
      *
      * @return tags {@link Set} stored in the component.

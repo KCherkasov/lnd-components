@@ -51,6 +51,19 @@ public class PlainTextPropertyComponent extends AbstractTextPropertyComponent {
     }
 
     /**
+     * constructor for derivative classes deserialization from their data models.
+     *
+     * @param id    - instance id.
+     * @param label - component label.
+     * @param text  - component text.
+     */
+    public PlainTextPropertyComponent(@NotNull Long id,
+                                      @NotNull Long label,
+                                      @NotNull String text) {
+        super(id, label, text);
+    }
+
+    /**
      * see {@link ru.rougegibbons.landsanddungeons.components.interfaces.core.mixins.PackableComponent}.
      *
      * @return {@link PlainTextPropertyModel} data model instance containing component data.
