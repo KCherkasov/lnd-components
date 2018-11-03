@@ -4,7 +4,7 @@ import org.jetbrains.annotations.NotNull;
 import org.junit.jupiter.api.Test;
 import ru.rougegibbons.landsanddungeons.components.core.numbers.modifiable.floatpoint.ClampedFloatComponentImpl;
 import ru.rougegibbons.landsanddungeons.components.interfaces.core.numbers.ClampedNumberComponent;
-import ru.rougegibbons.landsanddungeons.components.models.ComponentModel;
+import ru.rougegibbons.landsanddungeons.components.interfaces.models.ComponentModel;
 import ru.rougegibbons.landsanddungeons.components.models.core.numbers.ClampedFloatComponentModel;
 import ru.rougegibbons.landsanddungeons.utils.constants.Constants;
 import ru.rougegibbons.landsanddungeons.utils.constants.IdsConstants;

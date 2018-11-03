@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import org.jetbrains.annotations.NotNull;
 import ru.rougegibbons.landsanddungeons.components.core.numbers.constant.floatpoint.PairFloatComponentImpl;
+import ru.rougegibbons.landsanddungeons.components.interfaces.models.ComponentModel;
 import ru.rougegibbons.landsanddungeons.components.models.core.numbers.*;
 import ru.rougegibbons.landsanddungeons.components.models.core.properties.*;
 import ru.rougegibbons.landsanddungeons.components.models.core.string.StringComponentModel;
@@ -38,7 +39,7 @@ import ru.rougegibbons.landsanddungeons.components.models.core.string.parsers.Su
         @JsonSubTypes.Type(PlainDescriptionModel.class),
         @JsonSubTypes.Type(MarkdownedDescriptionModel.class)
 })
-public abstract class ComponentModel {
+public abstract class AbstractComponentModel implements ComponentModel {
     private final Long id;
 
     /**
@@ -46,7 +47,7 @@ public abstract class ComponentModel {
      *
      * @param id - instance id.
      */
-    public ComponentModel(@NotNull @JsonProperty("id") Long id) {
+    public AbstractComponentModel(@NotNull @JsonProperty("id") Long id) {
         this.id = id;
     }
 
@@ -55,6 +56,7 @@ public abstract class ComponentModel {
      *
      * @return stored id.
      */
+    @Override
     @JsonProperty("id")
     public @NotNull Long getId() {
         return id;

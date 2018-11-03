@@ -3,7 +3,7 @@ package ru.rougegibbons.landsanddungeons.components.core.numbers.modifiable.floa
 import org.jetbrains.annotations.NotNull;
 import ru.rougegibbons.landsanddungeons.components.core.numbers.modifiable.generic.ModifiableClampedNumberComponentImpl;
 import ru.rougegibbons.landsanddungeons.components.interfaces.core.numbers.ModifiableClampedNumberComponent;
-import ru.rougegibbons.landsanddungeons.components.models.ComponentModel;
+import ru.rougegibbons.landsanddungeons.components.models.AbstractComponentModel;
 import ru.rougegibbons.landsanddungeons.components.models.core.numbers.ClampedFloatComponentModel;
 import ru.rougegibbons.landsanddungeons.utils.constants.Constants;
 import ru.rougegibbons.landsanddungeons.utils.proxies.ArithmeticsProxy;
@@ -18,7 +18,7 @@ import java.util.concurrent.atomic.AtomicLong;
  *
  * @see ModifiableClampedNumberComponentImpl
  * @see ModifiableClampedNumberComponent
- * @see ComponentModel
+ * @see AbstractComponentModel
  * @see ClampedFloatComponentModel
  * @see ArithmeticsProxy
  * @see TrimmerProxy
@@ -73,7 +73,7 @@ public class ModifiableClampedFloatComponentImpl extends ModifiableClampedNumber
      * @return {@link ClampedFloatComponentModel} data model instance with component data.
      */
     @Override
-    public @NotNull ComponentModel pack() {
+    public @NotNull AbstractComponentModel pack() {
         return new ClampedFloatComponentModel(getId(), getLowerBoundary(),
                 getUpperBoundary(), getCurrentValue());
     }

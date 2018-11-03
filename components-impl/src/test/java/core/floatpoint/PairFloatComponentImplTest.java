@@ -3,7 +3,7 @@ package core.floatpoint;
 import org.jetbrains.annotations.NotNull;
 import org.junit.jupiter.api.Test;
 import ru.rougegibbons.landsanddungeons.components.core.numbers.constant.floatpoint.PairFloatComponentImpl;
-import ru.rougegibbons.landsanddungeons.components.models.ComponentModel;
+import ru.rougegibbons.landsanddungeons.components.models.AbstractComponentModel;
 import ru.rougegibbons.landsanddungeons.components.models.core.numbers.PairFloatComponentModel;
 import ru.rougegibbons.landsanddungeons.utils.constants.Constants;
 import ru.rougegibbons.landsanddungeons.utils.functions.FloatComparator;
@@ -72,7 +72,7 @@ public final class PairFloatComponentImplTest {
     @Test
     public void packTest() {
         final PairFloatComponentImpl component = prepareZeroOneHundredComponent();
-        final ComponentModel rawModel = component.pack();
+        final AbstractComponentModel rawModel = component.pack();
         assertThat(rawModel, instanceOf(PairFloatComponentModel.class));
         final PairFloatComponentModel model = (PairFloatComponentModel)rawModel;
         assertEquals(component.getId(), model.getId(),

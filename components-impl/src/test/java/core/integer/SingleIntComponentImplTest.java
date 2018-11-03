@@ -3,7 +3,7 @@ package core.integer;
 import org.jetbrains.annotations.NotNull;
 import org.junit.jupiter.api.Test;
 import ru.rougegibbons.landsanddungeons.components.core.numbers.constant.integer.SingleIntComponentImpl;
-import ru.rougegibbons.landsanddungeons.components.models.ComponentModel;
+import ru.rougegibbons.landsanddungeons.components.models.AbstractComponentModel;
 import ru.rougegibbons.landsanddungeons.components.models.core.numbers.SingleIntComponentModel;
 import ru.rougegibbons.landsanddungeons.utils.constants.Constants;
 
@@ -38,7 +38,7 @@ public final class SingleIntComponentImplTest {
         final SingleIntComponentImpl componentOne = prepareComponent(Constants.WIDE_PERCENTAGE_CAP_INT);
         assertEquals(Constants.WIDE_PERCENTAGE_CAP_INT, componentOne.getValue().intValue(),
                 "first component's value shall be equal to the one passed to it on creation.");
-        final ComponentModel genericModel = componentOne.pack();
+        final AbstractComponentModel genericModel = componentOne.pack();
         assertThat(genericModel, instanceOf(SingleIntComponentModel.class));
         final SingleIntComponentModel model = (SingleIntComponentModel)genericModel;
         final SingleIntComponentImpl componentTwo = new SingleIntComponentImpl(model);

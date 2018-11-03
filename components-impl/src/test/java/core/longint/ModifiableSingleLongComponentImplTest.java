@@ -3,7 +3,7 @@ package core.longint;
 import org.jetbrains.annotations.NotNull;
 import org.junit.jupiter.api.Test;
 import ru.rougegibbons.landsanddungeons.components.core.numbers.modifiable.longint.ModifiableSingleLongComponentImpl;
-import ru.rougegibbons.landsanddungeons.components.models.ComponentModel;
+import ru.rougegibbons.landsanddungeons.components.models.AbstractComponentModel;
 import ru.rougegibbons.landsanddungeons.components.models.core.numbers.SingleLongComponentModel;
 import ru.rougegibbons.landsanddungeons.utils.constants.Constants;
 import ru.rougegibbons.landsanddungeons.utils.functions.FloatMath;
@@ -37,7 +37,7 @@ public final class ModifiableSingleLongComponentImplTest {
         final ModifiableSingleLongComponentImpl componentOne =
                 prepareComponent((long) Constants.WIDE_PERCENTAGE_CAP_INT);
         getValueCheck(componentOne, (long) Constants.WIDE_PERCENTAGE_CAP_INT);
-        final ComponentModel genericModel = componentOne.pack();
+        final AbstractComponentModel genericModel = componentOne.pack();
         assertThat(genericModel, instanceOf(SingleLongComponentModel.class));
         final SingleLongComponentModel model = (SingleLongComponentModel) genericModel;
         final ModifiableSingleLongComponentImpl componentTwo =

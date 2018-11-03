@@ -2,7 +2,7 @@ package ru.rougegibbons.landsanddungeons.components.core.properties.string;
 
 import org.jetbrains.annotations.NotNull;
 import ru.rougegibbons.landsanddungeons.components.core.constants.ComponentLabels;
-import ru.rougegibbons.landsanddungeons.components.models.ComponentModel;
+import ru.rougegibbons.landsanddungeons.components.models.AbstractComponentModel;
 import ru.rougegibbons.landsanddungeons.components.models.core.properties.PlainDescriptionModel;
 
 /**
@@ -37,7 +37,7 @@ public class PlainDescriptionProperty extends PlainTextPropertyComponent {
      * @return {@link PlainDescriptionModel} data model instance containing component data.
      */
     @Override
-    public @NotNull ComponentModel pack() {
+    public @NotNull AbstractComponentModel pack() {
         return new PlainDescriptionModel(getId(), getText());
     }
 }

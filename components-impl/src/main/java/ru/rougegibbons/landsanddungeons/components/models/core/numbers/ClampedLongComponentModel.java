@@ -2,15 +2,15 @@ package ru.rougegibbons.landsanddungeons.components.models.core.numbers;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import org.jetbrains.annotations.NotNull;
-import ru.rougegibbons.landsanddungeons.components.models.ComponentModel;
+import ru.rougegibbons.landsanddungeons.components.models.AbstractComponentModel;
 
 /**
  * data model for class.
  *
- * @see ComponentModel
+ * @see AbstractComponentModel
  * @since 0.3.5
  */
-public class ClampedLongComponentModel extends ComponentModel {
+public class ClampedLongComponentModel extends AbstractComponentModel {
     private final Long lowerBoundary;
     private final Long upperBoundary;
     private final Long currentValue;

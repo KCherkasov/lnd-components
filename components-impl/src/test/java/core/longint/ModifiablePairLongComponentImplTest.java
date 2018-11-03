@@ -3,7 +3,7 @@ package core.longint;
 import org.jetbrains.annotations.NotNull;
 import org.junit.jupiter.api.Test;
 import ru.rougegibbons.landsanddungeons.components.core.numbers.modifiable.longint.ModifiablePairLongComponentImpl;
-import ru.rougegibbons.landsanddungeons.components.models.ComponentModel;
+import ru.rougegibbons.landsanddungeons.components.models.AbstractComponentModel;
 import ru.rougegibbons.landsanddungeons.components.models.core.numbers.PairLongComponentModel;
 import ru.rougegibbons.landsanddungeons.utils.constants.Constants;
 import ru.rougegibbons.landsanddungeons.utils.constants.IdsConstants;
@@ -71,7 +71,7 @@ public final class ModifiablePairLongComponentImplTest {
     @Test
     public void packTest() {
         final ModifiablePairLongComponentImpl component = prepareZeroOneHundredComponent();
-        final ComponentModel rawModel = component.pack();
+        final AbstractComponentModel rawModel = component.pack();
         assertThat(rawModel, instanceOf(PairLongComponentModel.class));
         final PairLongComponentModel model = (PairLongComponentModel) rawModel;
         assertEquals(component.getId(), model.getId(),

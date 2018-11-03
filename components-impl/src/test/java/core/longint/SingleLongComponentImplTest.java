@@ -3,7 +3,7 @@ package core.longint;
 import org.jetbrains.annotations.NotNull;
 import org.junit.jupiter.api.Test;
 import ru.rougegibbons.landsanddungeons.components.core.numbers.constant.longint.SingleLongComponentImpl;
-import ru.rougegibbons.landsanddungeons.components.models.ComponentModel;
+import ru.rougegibbons.landsanddungeons.components.models.AbstractComponentModel;
 import ru.rougegibbons.landsanddungeons.components.models.core.numbers.SingleLongComponentModel;
 import ru.rougegibbons.landsanddungeons.utils.constants.Constants;
 
@@ -38,7 +38,7 @@ public final class SingleLongComponentImplTest {
         final SingleLongComponentImpl componentOne = prepareComponent(Constants.ZERO_LONG);
         assertEquals(Constants.ZERO_LONG, componentOne.getValue().intValue(),
                 "first component's value shall be equal to the one passed to it on creation.");
-        final ComponentModel genericModel = componentOne.pack();
+        final AbstractComponentModel genericModel = componentOne.pack();
         assertThat(genericModel, instanceOf(SingleLongComponentModel.class));
         final SingleLongComponentModel model = (SingleLongComponentModel)genericModel;
         final SingleLongComponentImpl componentTwo = new SingleLongComponentImpl(model);

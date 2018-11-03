@@ -3,7 +3,7 @@ package core.string.parsers;
 import org.jetbrains.annotations.NotNull;
 import org.junit.jupiter.api.Test;
 import ru.rougegibbons.landsanddungeons.components.core.string.parsers.SubstitutionsComponentImpl;
-import ru.rougegibbons.landsanddungeons.components.models.ComponentModel;
+import ru.rougegibbons.landsanddungeons.components.models.AbstractComponentModel;
 import ru.rougegibbons.landsanddungeons.components.models.core.string.parsers.SubstitutionsComponentModel;
 
 import java.util.*;
@@ -141,7 +141,7 @@ public final class SubstitutionsComponentImplTest {
     }
 
     private void packUnpackCheck(@NotNull SubstitutionsComponentImpl component) {
-        final ComponentModel rawModel = component.pack();
+        final AbstractComponentModel rawModel = component.pack();
         assertThat(rawModel, instanceOf(SubstitutionsComponentModel.class));
         final SubstitutionsComponentModel model = (SubstitutionsComponentModel) rawModel;
         assertEquals(component.getId(), model.getId(),

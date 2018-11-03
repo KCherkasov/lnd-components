@@ -3,7 +3,7 @@ package ru.rougegibbons.landsanddungeons.components.core.numbers.modifiable.floa
 import org.jetbrains.annotations.NotNull;
 import ru.rougegibbons.landsanddungeons.components.core.numbers.modifiable.generic.ModifiableSingleNumberComponentImpl;
 import ru.rougegibbons.landsanddungeons.components.interfaces.core.numbers.ModifiableSingleNumberComponent;
-import ru.rougegibbons.landsanddungeons.components.models.ComponentModel;
+import ru.rougegibbons.landsanddungeons.components.models.AbstractComponentModel;
 import ru.rougegibbons.landsanddungeons.components.models.core.numbers.SingleFloatComponentModel;
 import ru.rougegibbons.landsanddungeons.utils.constants.Constants;
 import ru.rougegibbons.landsanddungeons.utils.proxies.ArithmeticsProxy;
@@ -57,7 +57,7 @@ public class ModifiableSingleFloatComponentImpl extends ModifiableSingleNumberCo
      * @return {@link SingleFloatComponentModel} data model instance containing component's data.
      */
     @Override
-    public @NotNull ComponentModel pack() {
+    public @NotNull AbstractComponentModel pack() {
         return new SingleFloatComponentModel(getId(), getValue());
     }
 

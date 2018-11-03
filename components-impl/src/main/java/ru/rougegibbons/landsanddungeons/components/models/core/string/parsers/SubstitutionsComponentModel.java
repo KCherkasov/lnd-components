@@ -2,7 +2,7 @@ package ru.rougegibbons.landsanddungeons.components.models.core.string.parsers;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import org.jetbrains.annotations.NotNull;
-import ru.rougegibbons.landsanddungeons.components.models.ComponentModel;
+import ru.rougegibbons.landsanddungeons.components.models.AbstractComponentModel;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -10,9 +10,9 @@ import java.util.Map;
 /**
  * data model for  {@link ru.rougegibbons.landsanddungeons.components.core.string.parsers.SubstitutionsComponentImpl}.
  * @see ru.rougegibbons.landsanddungeons.components.core.string.parsers.SubstitutionsComponentImpl
- * @see ComponentModel
+ * @see AbstractComponentModel
  */
-public class SubstitutionsComponentModel extends ComponentModel {
+public class SubstitutionsComponentModel extends AbstractComponentModel {
     private final Map<String, String> substitutions = new HashMap<>();
 
     /**

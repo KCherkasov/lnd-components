@@ -3,7 +3,7 @@ package ru.rougegibbons.landsanddungeons.components.core.string.parsers;
 import org.jetbrains.annotations.NotNull;
 import ru.rougegibbons.landsanddungeons.components.core.AbstractComponent;
 import ru.rougegibbons.landsanddungeons.components.interfaces.core.string.parsers.SubstitutionsComponent;
-import ru.rougegibbons.landsanddungeons.components.models.ComponentModel;
+import ru.rougegibbons.landsanddungeons.components.models.AbstractComponentModel;
 import ru.rougegibbons.landsanddungeons.components.models.core.string.parsers.SubstitutionsComponentModel;
 import ru.rougegibbons.landsanddungeons.utils.constants.Constants;
 
@@ -77,7 +77,7 @@ public class SubstitutionsComponentImpl extends AbstractComponent
      * @return {@link SubstitutionsComponentModel} data model instance.
      */
     @Override
-    public @NotNull ComponentModel pack() {
+    public @NotNull AbstractComponentModel pack() {
         return new SubstitutionsComponentModel(getId(), substitutions);
     }
 

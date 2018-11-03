@@ -3,7 +3,7 @@ package ru.rougegibbons.landsanddungeons.components.core.string;
 import org.jetbrains.annotations.NotNull;
 import ru.rougegibbons.landsanddungeons.components.core.AbstractComponent;
 import ru.rougegibbons.landsanddungeons.components.interfaces.core.string.StringComponent;
-import ru.rougegibbons.landsanddungeons.components.models.ComponentModel;
+import ru.rougegibbons.landsanddungeons.components.models.AbstractComponentModel;
 import ru.rougegibbons.landsanddungeons.components.models.core.string.StringComponentModel;
 import ru.rougegibbons.landsanddungeons.utils.constants.Constants;
 
@@ -51,7 +51,7 @@ public class StringComponentImpl extends AbstractComponent implements StringComp
      * @see StringComponentModel
      */
     @Override
-    public @NotNull ComponentModel pack() {
+    public @NotNull AbstractComponentModel pack() {
         return new StringComponentModel(getId(), text);
     }
 

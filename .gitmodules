@@ -2,3 +2,6 @@
 	path = lnd-utils
 	url = https://github.com/RougeGibbons/lnd-utils.git
 	branch = master
+[submodule "lnd-interfaces"]
+	path = lnd-interfaces
+	url = https://github.com/RougeGibbons/lnd-interfaces.git

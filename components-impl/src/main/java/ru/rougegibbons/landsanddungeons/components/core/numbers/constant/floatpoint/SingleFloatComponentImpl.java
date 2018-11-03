@@ -4,7 +4,7 @@ import org.jetbrains.annotations.NotNull;
 import ru.rougegibbons.landsanddungeons.components.core.AbstractComponent;
 import ru.rougegibbons.landsanddungeons.components.core.numbers.constant.generic.SingleNumberComponentImpl;
 import ru.rougegibbons.landsanddungeons.components.interfaces.core.numbers.SingleNumberComponent;
-import ru.rougegibbons.landsanddungeons.components.models.ComponentModel;
+import ru.rougegibbons.landsanddungeons.components.models.AbstractComponentModel;
 import ru.rougegibbons.landsanddungeons.components.models.core.numbers.SingleFloatComponentModel;
 import ru.rougegibbons.landsanddungeons.utils.constants.Constants;
 
@@ -40,7 +40,7 @@ public class SingleFloatComponentImpl extends SingleNumberComponentImpl<Float>
      * @return serialized data model
      */
     @Override
-    public @NotNull ComponentModel pack() {
+    public @NotNull AbstractComponentModel pack() {
         return new SingleFloatComponentModel(getId(), getValue());
     }
 

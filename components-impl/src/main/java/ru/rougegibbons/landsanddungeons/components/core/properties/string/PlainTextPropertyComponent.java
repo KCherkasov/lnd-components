@@ -3,7 +3,7 @@ package ru.rougegibbons.landsanddungeons.components.core.properties.string;
 import org.jetbrains.annotations.NotNull;
 import ru.rougegibbons.landsanddungeons.components.core.string.StringComponentImpl;
 import ru.rougegibbons.landsanddungeons.components.interfaces.core.string.StringComponent;
-import ru.rougegibbons.landsanddungeons.components.models.ComponentModel;
+import ru.rougegibbons.landsanddungeons.components.models.AbstractComponentModel;
 import ru.rougegibbons.landsanddungeons.components.models.core.properties.PlainTextPropertyModel;
 import ru.rougegibbons.landsanddungeons.components.models.core.string.StringComponentModel;
 import ru.rougegibbons.landsanddungeons.utils.constants.Constants;
@@ -69,7 +69,7 @@ public class PlainTextPropertyComponent extends AbstractTextPropertyComponent {
      * @return {@link PlainTextPropertyModel} data model instance containing component data.
      */
     @Override
-    public @NotNull ComponentModel pack() {
+    public @NotNull AbstractComponentModel pack() {
         return new PlainTextPropertyModel(getId(), getLabel(), getText());
     }
 
@@ -80,7 +80,7 @@ public class PlainTextPropertyComponent extends AbstractTextPropertyComponent {
      * @return {@link StringComponentImpl} instance.
      */
     @Override
-    protected @NotNull StringComponent initTextHolder(@NotNull ComponentModel model) {
+    protected @NotNull StringComponent initTextHolder(@NotNull AbstractComponentModel model) {
         if (model.getClass().equals(StringComponentModel.class)) {
             return new StringComponentImpl((StringComponentModel) model);
         } else {

@@ -3,7 +3,7 @@ package core.floatpoint;
 import org.jetbrains.annotations.NotNull;
 import org.junit.jupiter.api.Test;
 import ru.rougegibbons.landsanddungeons.components.core.numbers.modifiable.floatpoint.ModifiableSingleFloatComponentImpl;
-import ru.rougegibbons.landsanddungeons.components.models.ComponentModel;
+import ru.rougegibbons.landsanddungeons.components.models.AbstractComponentModel;
 import ru.rougegibbons.landsanddungeons.components.models.core.numbers.SingleFloatComponentModel;
 import ru.rougegibbons.landsanddungeons.utils.constants.Constants;
 import ru.rougegibbons.landsanddungeons.utils.functions.FloatComparator;
@@ -37,7 +37,7 @@ public class ModifiableSingleFloatComponentImplTest {
         final ModifiableSingleFloatComponentImpl componentOne =
                 prepareComponent((float) Constants.WIDE_PERCENTAGE_CAP_INT);
         getValueCheck(componentOne, (float) Constants.WIDE_PERCENTAGE_CAP_INT);
-        final ComponentModel genericModel = componentOne.pack();
+        final AbstractComponentModel genericModel = componentOne.pack();
         assertThat(genericModel, instanceOf(SingleFloatComponentModel.class));
         final SingleFloatComponentModel model = (SingleFloatComponentModel) genericModel;
         final ModifiableSingleFloatComponentImpl componentTwo =

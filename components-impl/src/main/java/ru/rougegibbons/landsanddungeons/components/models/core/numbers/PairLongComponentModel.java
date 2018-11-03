@@ -3,12 +3,12 @@ package ru.rougegibbons.landsanddungeons.components.models.core.numbers;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import org.jetbrains.annotations.NotNull;
 import ru.rougegibbons.landsanddungeons.components.core.numbers.constant.longint.PairLongComponentImpl;
-import ru.rougegibbons.landsanddungeons.components.models.ComponentModel;
+import ru.rougegibbons.landsanddungeons.components.models.AbstractComponentModel;
 
 /**
  * data model for {@link PairLongComponentImpl} class.
  */
-public class PairLongComponentModel extends ComponentModel {
+public class PairLongComponentModel extends AbstractComponentModel {
     private final Long firstValue;
     private final Long secondValue;
 

@@ -3,7 +3,7 @@ package core.string.parsers;
 import org.jetbrains.annotations.NotNull;
 import org.junit.jupiter.api.Test;
 import ru.rougegibbons.landsanddungeons.components.core.string.parsers.MarkdownStringComponentImpl;
-import ru.rougegibbons.landsanddungeons.components.models.ComponentModel;
+import ru.rougegibbons.landsanddungeons.components.models.AbstractComponentModel;
 import ru.rougegibbons.landsanddungeons.components.models.core.string.StringComponentModel;
 import ru.rougegibbons.landsanddungeons.components.models.core.string.parsers.MarkdownStringComponentModel;
 import ru.rougegibbons.landsanddungeons.utils.constants.Constants;
@@ -205,7 +205,7 @@ public final class MarkdownStringComponentImplTest {
     }
 
     private void packUnpackCheck(@NotNull MarkdownStringComponentImpl component) {
-        final ComponentModel rawModel = component.pack();
+        final AbstractComponentModel rawModel = component.pack();
         assertThat(rawModel, instanceOf(MarkdownStringComponentModel.class));
         final MarkdownStringComponentModel model = (MarkdownStringComponentModel) rawModel;
         assertEquals(component.getId(), model.getId(), "model shall have the same id " +

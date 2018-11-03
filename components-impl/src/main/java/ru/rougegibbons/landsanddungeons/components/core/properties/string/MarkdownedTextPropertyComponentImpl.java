@@ -4,7 +4,7 @@ import org.jetbrains.annotations.NotNull;
 import ru.rougegibbons.landsanddungeons.components.core.string.parsers.MarkdownStringComponentImpl;
 import ru.rougegibbons.landsanddungeons.components.interfaces.core.properties.string.MarkdownedTextPropertyComponent;
 import ru.rougegibbons.landsanddungeons.components.interfaces.core.string.StringComponent;
-import ru.rougegibbons.landsanddungeons.components.models.ComponentModel;
+import ru.rougegibbons.landsanddungeons.components.models.AbstractComponentModel;
 import ru.rougegibbons.landsanddungeons.components.models.core.properties.MarkdownedTextPropertyModel;
 import ru.rougegibbons.landsanddungeons.components.models.core.properties.PlainTextPropertyModel;
 import ru.rougegibbons.landsanddungeons.components.models.core.string.StringComponentModel;
@@ -115,7 +115,7 @@ public class MarkdownedTextPropertyComponentImpl
      * @return {@link MarkdownedTextPropertyModel} data model instance containing component data.
      */
     @Override
-    public @NotNull ComponentModel pack() {
+    public @NotNull AbstractComponentModel pack() {
         return new MarkdownedTextPropertyModel(
                 getId(), getLabel(), getText(), getTags());
     }
@@ -138,7 +138,7 @@ public class MarkdownedTextPropertyComponentImpl
      * @return {@link MarkdownStringComponentImpl} text holder instance.
      */
     @Override
-    protected @NotNull StringComponent initTextHolder(@NotNull ComponentModel model) {
+    protected @NotNull StringComponent initTextHolder(@NotNull AbstractComponentModel model) {
         if (model.getClass().equals(StringComponentModel.class)) {
             return new MarkdownStringComponentImpl((StringComponentModel) model);
         } else if (model.getClass().equals(MarkdownStringComponentModel.class)) {

@@ -4,7 +4,7 @@ import org.jetbrains.annotations.NotNull;
 import ru.rougegibbons.landsanddungeons.components.core.properties.AbstractProperty;
 import ru.rougegibbons.landsanddungeons.components.interfaces.core.properties.string.TextPropertyComponent;
 import ru.rougegibbons.landsanddungeons.components.interfaces.core.string.StringComponent;
-import ru.rougegibbons.landsanddungeons.components.models.ComponentModel;
+import ru.rougegibbons.landsanddungeons.components.models.AbstractComponentModel;
 
 /**
  * Abstract {@link TextPropertyComponent} implementation, representing property containing some text.
@@ -88,7 +88,7 @@ public abstract class AbstractTextPropertyComponent
      * @param model - text holder data model.
      * @return component text holder.
      */
-    protected abstract @NotNull StringComponent initTextHolder(@NotNull ComponentModel model);
+    protected abstract @NotNull StringComponent initTextHolder(@NotNull AbstractComponentModel model);
 
     /**
      * component text holder initializer. Creates text holder from text string.

@@ -3,14 +3,14 @@ package ru.rougegibbons.landsanddungeons.components.models.core.numbers;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import org.jetbrains.annotations.NotNull;
 import ru.rougegibbons.landsanddungeons.components.core.numbers.constant.integer.PairIntComponentImpl;
-import ru.rougegibbons.landsanddungeons.components.models.ComponentModel;
+import ru.rougegibbons.landsanddungeons.components.models.AbstractComponentModel;
 
 /**
  * data model for {@link PairIntComponentImpl} class.
  * @see PairIntComponentImpl
- * @see ComponentModel
+ * @see AbstractComponentModel
  */
-public class PairIntComponentModel extends ComponentModel {
+public class PairIntComponentModel extends AbstractComponentModel {
     private final Integer firstValue;
     private final Integer secondValue;
 

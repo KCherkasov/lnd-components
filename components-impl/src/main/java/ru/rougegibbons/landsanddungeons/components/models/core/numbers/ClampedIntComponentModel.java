@@ -2,15 +2,15 @@ package ru.rougegibbons.landsanddungeons.components.models.core.numbers;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import org.jetbrains.annotations.NotNull;
-import ru.rougegibbons.landsanddungeons.components.models.ComponentModel;
+import ru.rougegibbons.landsanddungeons.components.models.AbstractComponentModel;
 
 /**
  * data model for class.
  *
- * @see ComponentModel
+ * @see AbstractComponentModel
  * @since 0.3.5
  */
-public class ClampedIntComponentModel extends ComponentModel {
+public class ClampedIntComponentModel extends AbstractComponentModel {
     private final Integer lowerBoundary;
     private final Integer upperBoundary;
     private final Integer currentValue;

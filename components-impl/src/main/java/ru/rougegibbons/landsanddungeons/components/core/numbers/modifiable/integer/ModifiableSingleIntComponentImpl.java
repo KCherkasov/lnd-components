@@ -3,7 +3,7 @@ package ru.rougegibbons.landsanddungeons.components.core.numbers.modifiable.inte
 import org.jetbrains.annotations.NotNull;
 import ru.rougegibbons.landsanddungeons.components.core.numbers.modifiable.generic.ModifiableSingleNumberComponentImpl;
 import ru.rougegibbons.landsanddungeons.components.interfaces.core.numbers.ModifiableSingleNumberComponent;
-import ru.rougegibbons.landsanddungeons.components.models.ComponentModel;
+import ru.rougegibbons.landsanddungeons.components.models.AbstractComponentModel;
 import ru.rougegibbons.landsanddungeons.components.models.core.numbers.SingleIntComponentModel;
 import ru.rougegibbons.landsanddungeons.utils.constants.Constants;
 import ru.rougegibbons.landsanddungeons.utils.proxies.ArithmeticsProxy;
@@ -57,7 +57,7 @@ public class ModifiableSingleIntComponentImpl extends ModifiableSingleNumberComp
      * @return {@link SingleIntComponentModel} data model instance with component's data.
      */
     @Override
-    public @NotNull ComponentModel pack() {
+    public @NotNull AbstractComponentModel pack() {
         return new SingleIntComponentModel(getId(), getValue());
     }
 

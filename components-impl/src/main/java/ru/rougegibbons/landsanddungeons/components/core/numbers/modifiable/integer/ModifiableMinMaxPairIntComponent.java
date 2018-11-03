@@ -3,7 +3,7 @@ package ru.rougegibbons.landsanddungeons.components.core.numbers.modifiable.inte
 import org.jetbrains.annotations.NotNull;
 import ru.rougegibbons.landsanddungeons.components.core.numbers.modifiable.generic.ModifiableOrderedPairNumberComponentImpl;
 import ru.rougegibbons.landsanddungeons.components.interfaces.core.numbers.ModifiablePairNumberComponent;
-import ru.rougegibbons.landsanddungeons.components.models.ComponentModel;
+import ru.rougegibbons.landsanddungeons.components.models.AbstractComponentModel;
 import ru.rougegibbons.landsanddungeons.components.models.core.numbers.PairIntComponentModel;
 import ru.rougegibbons.landsanddungeons.utils.constants.Constants;
 import ru.rougegibbons.landsanddungeons.utils.proxies.ArithmeticsProxy;
@@ -66,7 +66,7 @@ public class ModifiableMinMaxPairIntComponent extends ModifiableOrderedPairNumbe
      * @return {@link PairIntComponentModel} data model instance with component data.
      */
     @Override
-    public @NotNull ComponentModel pack() {
+    public @NotNull AbstractComponentModel pack() {
         return new PairIntComponentModel(getId(), getFirstValue(), getSecondValue());
     }
 

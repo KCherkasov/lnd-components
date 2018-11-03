@@ -3,7 +3,7 @@ package core.floatpoint;
 import org.jetbrains.annotations.NotNull;
 import org.junit.jupiter.api.Test;
 import ru.rougegibbons.landsanddungeons.components.core.numbers.constant.floatpoint.SingleFloatComponentImpl;
-import ru.rougegibbons.landsanddungeons.components.models.ComponentModel;
+import ru.rougegibbons.landsanddungeons.components.models.AbstractComponentModel;
 import ru.rougegibbons.landsanddungeons.components.models.core.numbers.SingleFloatComponentModel;
 import ru.rougegibbons.landsanddungeons.utils.constants.Constants;
 import ru.rougegibbons.landsanddungeons.utils.functions.FloatComparator;
@@ -38,7 +38,7 @@ public final class SingleFloatComponentImplTest {
         final SingleFloatComponentImpl componentOne = prepareComponent(Constants.PERCENTAGE_CAP_FLOAT);
         assertTrue(FloatComparator.areEqual(Constants.PERCENTAGE_CAP_FLOAT, componentOne.getValue()),
                 "first component's value shall be equal to the one passed to it on creation.");
-        final ComponentModel genericModel = componentOne.pack();
+        final AbstractComponentModel genericModel = componentOne.pack();
         assertThat(genericModel, instanceOf(SingleFloatComponentModel.class));
         final SingleFloatComponentModel model = (SingleFloatComponentModel)genericModel;
         final SingleFloatComponentImpl componentTwo = new SingleFloatComponentImpl(model);

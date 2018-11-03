@@ -3,7 +3,7 @@ package ru.rougegibbons.landsanddungeons.components.core.string.parsers;
 import org.jetbrains.annotations.NotNull;
 import ru.rougegibbons.landsanddungeons.components.core.string.StringComponentImpl;
 import ru.rougegibbons.landsanddungeons.components.interfaces.core.string.parsers.MarkdownStringComponent;
-import ru.rougegibbons.landsanddungeons.components.models.ComponentModel;
+import ru.rougegibbons.landsanddungeons.components.models.AbstractComponentModel;
 import ru.rougegibbons.landsanddungeons.components.models.core.string.StringComponentModel;
 import ru.rougegibbons.landsanddungeons.components.models.core.string.parsers.MarkdownStringComponentModel;
 import ru.rougegibbons.landsanddungeons.utils.constants.Constants;
@@ -18,7 +18,7 @@ import java.util.concurrent.atomic.AtomicLong;
  * Extension of {@link StringComponentImpl} class.
  * @see MarkdownStringComponent
  * @see ru.rougegibbons.landsanddungeons.components.interfaces.core.string.StringComponent
- * @see ComponentModel
+ * @see AbstractComponentModel
  * @see StringComponentModel
  * @see MarkdownStringComponentModel
  * @see String
@@ -80,7 +80,7 @@ public class MarkdownStringComponentImpl extends StringComponentImpl
      * @return {@link MarkdownStringComponentModel} data model instance.
      */
     @Override
-    public @NotNull ComponentModel pack() {
+    public @NotNull AbstractComponentModel pack() {
         return new MarkdownStringComponentModel(getId(), getText(), tags);
     }
 

@@ -3,7 +3,7 @@ package core.string;
 import org.jetbrains.annotations.NotNull;
 import org.junit.jupiter.api.Test;
 import ru.rougegibbons.landsanddungeons.components.core.string.StringComponentImpl;
-import ru.rougegibbons.landsanddungeons.components.models.ComponentModel;
+import ru.rougegibbons.landsanddungeons.components.models.AbstractComponentModel;
 import ru.rougegibbons.landsanddungeons.components.models.core.string.StringComponentModel;
 import ru.rougegibbons.landsanddungeons.utils.constants.Constants;
 
@@ -41,7 +41,7 @@ public final class StringComponentImplTest {
         final StringComponentImpl component = new StringComponentImpl(testString);
         assertEquals(testString, component.getText(),
                 "stored string shall be equal to the source one.");
-        final ComponentModel model = component.pack();
+        final AbstractComponentModel model = component.pack();
         assertThat(model, instanceOf(StringComponentModel.class));
         final StringComponentModel stringComponentModel = (StringComponentModel)model;
         final StringComponentImpl unpackedComponent = new StringComponentImpl(stringComponentModel);

@@ -3,7 +3,7 @@ package ru.rougegibbons.landsanddungeons.components.core.numbers.modifiable.inte
 import org.jetbrains.annotations.NotNull;
 import ru.rougegibbons.landsanddungeons.components.core.numbers.modifiable.generic.ModifiableClampedNumberComponentImpl;
 import ru.rougegibbons.landsanddungeons.components.interfaces.core.numbers.ModifiableClampedNumberComponent;
-import ru.rougegibbons.landsanddungeons.components.models.ComponentModel;
+import ru.rougegibbons.landsanddungeons.components.models.AbstractComponentModel;
 import ru.rougegibbons.landsanddungeons.components.models.core.numbers.ClampedIntComponentModel;
 import ru.rougegibbons.landsanddungeons.utils.constants.Constants;
 import ru.rougegibbons.landsanddungeons.utils.proxies.ArithmeticsProxy;
@@ -18,7 +18,7 @@ import java.util.concurrent.atomic.AtomicLong;
  *
  * @see ModifiableClampedNumberComponentImpl
  * @see ModifiableClampedNumberComponent
- * @see ComponentModel
+ * @see AbstractComponentModel
  * @see ClampedIntComponentModel
  * @see Integer
  * @see ArithmeticsProxy
@@ -74,7 +74,7 @@ public class ModifiableClampedIntComponentImpl extends ModifiableClampedNumberCo
      * @return {@link ClampedIntComponentModel} data model instance with component data.
      */
     @Override
-    public @NotNull ComponentModel pack() {
+    public @NotNull AbstractComponentModel pack() {
         return new ClampedIntComponentModel(getId(), getLowerBoundary(),
                 getUpperBoundary(), getCurrentValue());
     }
